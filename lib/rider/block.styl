@@ -1,0 +1,76 @@
+// block
+// 
+// @author  firede(firede@firede.us)
+
+
+// set width and height quickly
+// default unit is `px`
+size($values...)
+    if length($values) == 1
+        $values-unit = unit($values) == '' ? 'px' : unit($values)
+
+        width: unit($values, $values-unit)
+        height: unit($values, $values-unit)
+    else
+        $width-unit = unit($values[0]) == '' ? 'px' : unit($values[0])
+        $height-unit = unit($values[1]) == '' ? 'px' : unit($values[1])
+
+        width: unit($values[0], $width-unit)
+        height: unit($values[1], $height-unit)
+
+
+// triangle
+// @see bit.ly/1mk4f3L
+triangle($direction = up, $size = 10px, $color = #333)
+    size: 0
+
+    if $direction == up
+        border-left: $size solid transparent
+        border-right: $size solid transparent
+        border-bottom: $size solid $color
+    else if $direction == down
+        border-left: $size solid transparent
+        border-right: $size solid transparent
+        border-top: $size solid $color
+    else if $direction == left
+        border-top: $size solid transparent
+        border-bottom: $size solid transparent
+        border-right: $size solid $color
+    else if $direction == right
+        border-top: $size solid transparent
+        border-bottom: $size solid transparent
+        border-left: $size solid $color
+
+
+// hide text
+// @see bit.ly/JanOgS
+hide-text()
+    text-indent: 101%
+    white-space: nowrap
+    overflow: hidden
+
+
+// ellipsis
+// support multi line (webkit only)
+ellipsis($line = 1)
+    overflow: hidden
+    text-overflow: ellipsis
+
+    if $line == 1
+        white-space: nowrap
+    else
+        display: -webkit-box
+        -webkit-line-clamp: $line
+        -webkit-box-orient: vertical
+
+
+// clearfix
+// @see http://h5bp.com/q
+clearfix()
+    &:after,
+    &:before
+        content: ' '
+        display: table
+    &:after
+        clear: both
+

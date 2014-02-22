@@ -1,0 +1,33 @@
+// unit
+// 
+// @author  firede(firede@firede.us)
+// @desc    unit conversion functions
+
+
+@require 'setting'
+
+// convert to rem unit
+// default unit is `px`
+rem($value)
+    if unit($value) == 'px' || unit($value) == ''
+        $value = round($value / $BaseFontSize, 3)
+
+    unit($value, 'rem')
+
+
+// convert to em unit
+em($value, $upper-value = $BaseFontSize)
+    if unit($value) == 'px' || unit($value) == ''
+        $value = round($value / px($upper-value), 3)
+    else if unit($value) == 'rem'
+        $value = round(px($value) / px($upper-value), 3)
+
+    unit($value, 'em')
+
+
+// convert to px unit
+px($value)
+    if unit($value) == 'rem'
+        $value = round($value * $BaseFontSize, 3)
+
+    unit($value, 'px')

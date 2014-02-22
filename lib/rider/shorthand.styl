@@ -1,0 +1,74 @@
+// shorthand
+// 
+// @author  firede(firede@firede.us)
+// @desc    shorthand properties support, based on `clockhand-stylus`
+// @see     https://github.com/jasonkuhrt/clockhand-stylus
+
+clockhand($values, $property-prefix = '', $property-suffix = '', $sides = (top right bottom left))
+
+    $clockhand-values-patterns-lookup = ((0 0 0 0) (0 1 0 1) (0 1 2 1) (0 1 2 3))
+
+    if typeof($property-prefix) isnt 'string'
+        error('$property-prefix must be a string, but got ' + $property-prefix + ' as a ' + type-of($property-prefix))
+
+    $property-prefix = unquote($property-prefix + '-') if $property-prefix
+    $property-suffix = unquote('-' + $property-suffix) if $property-suffix && $property-suffix != ''
+
+    $values-pattern = $clockhand-values-patterns-lookup[length($values) - 1]
+
+    for i in 0..3
+        $value = $values[$values-pattern[i]]
+        $side = $sides[i]
+
+        {$property-prefix}{$side}{$property-suffix}: $value if $value isnt _
+
+
+absolute()
+    position: absolute
+    clockhand(arguments)
+
+
+fixed()
+    position: fixed
+    clockhand(arguments)
+
+
+relative()
+    position: relative
+    clockhand(arguments)
+
+
+padding()
+    if _ in arguments
+        clockhand(arguments, 'padding')
+    else
+        padding: arguments
+
+
+margin()
+    if _ in arguments
+        clockhand(arguments, 'margin')
+    else
+        margin: arguments
+
+
+border-color()
+    if _ in arguments
+        clockhand(arguments, 'border', 'color')
+    else
+        border-color: arguments
+
+
+border-style()
+    if _ in arguments
+        clockhand(arguments, 'border', 'style')
+    else
+        border-style: arguments
+
+
+border-width()
+    if _ in arguments
+        clockhand(arguments, 'border', 'width')
+    else
+        border-width: arguments
+
