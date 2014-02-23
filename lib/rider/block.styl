@@ -20,15 +20,14 @@ size($values...)
 
 
 // triangle
-// @see bit.ly/1mk4f3L
-triangle($direction = up, $size = 10px, $color = #333)
+triangle($direction = top, $size = 10px, $color = #333)
     size: 0
 
-    if $direction == up
+    if $direction == top
         border-left: $size solid transparent
         border-right: $size solid transparent
         border-bottom: $size solid $color
-    else if $direction == down
+    else if $direction == bottom
         border-left: $size solid transparent
         border-right: $size solid transparent
         border-top: $size solid $color

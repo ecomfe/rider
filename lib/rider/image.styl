@@ -1,0 +1,38 @@
+// image
+// 
+// @author  firede(firede@firede.us)
+// @desc    image helpers
+
+
+@require 'setting'
+@require 'block'
+
+
+// set background image
+bg($path, $width = auto, $height = auto, $dppx = $ImageDPPX)
+    warn('ir: $path should be a string.') if typeof($path) != 'string'
+    background: url($path) no-repeat
+
+    if $width in (cover contain) and $height == auto
+        $height = null
+    else if $width == auto && $height == auto
+        $img-size = image-size($path, 0)
+        if $img-size[0] != 0
+            $width = ($img-size[0] / $dppx)
+            $height = ($img-size[1] / $dppx)
+        else
+            warn('Automatically get the $width and $height fails, the values has been set to `auto`.')
+    background-size: $width $height
+
+
+// image replace
+// hide text and set background image
+ir($path, $x = 0, $y = 0, $width = auto, $height = auto, $dppx = $ImageDPPX)
+    bg($path, $width, $height, $dppx)
+
+    if $x != 0 && $y == 0
+        $y = null
+    if $x != 0 || $y != 0
+        background-position: $x $y
+
+    hide-text()
