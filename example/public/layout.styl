@@ -1,0 +1,64 @@
+normalize()
+
+@font-face
+    font-family: 'rider-icon'
+    src:url('font/rider-icon.woff') format('woff'), url('font/rider-icon.ttf') format('truetype')
+    font-weight: normal
+    font-style: normal
+
+[class^="icon-"], [class*=" icon-"]
+    font-family: 'rider-icon'
+    speak: none
+    font-style: normal
+    font-weight: normal
+    font-variant: normal
+    text-transform: none
+    line-height: 1
+    -webkit-font-smoothing: antialiased
+
+.icon-arrow-left:before
+    content: "\e600"
+.icon-arrow-right:before
+    content: "\e601"
+.icon-github:before
+    content: "\e602"
+.icon-tag:before
+    content: "\e603"
+
+
+@import url("http://fonts.googleapis.com/css?family=Lato:400,300")
+
+body
+    font-family: Lato, $BaseFontFamily
+    font-weight: 300
+
+.appbar
+    height: 44px
+    line-height: @height
+    text-align: center
+    background: #007aff
+    color: #FFF
+    position: relative
+    .title
+        font-weight: 400
+        font-size: rem(16)
+        margin: 0 auto
+        &.logo
+            ir: 'img/logo.png'
+            size: 75px 44px
+    .next
+    .prev
+        height: 16px
+        line-height: @height
+        font-size: rem(14)
+        text-decoration: none
+        padding: 14px
+        color: #FFF
+    .next
+        absolute: 0 0 _ _
+    .prev
+        absolute: 0 _ _ 0
+
+.container
+    padding: 10px
+    font-size: rem(14)
