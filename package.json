@@ -13,7 +13,8 @@
     "stylus": "~0.42.2",
     "express": "~3.4.8",
     "ejs": "~0.8.5",
-    "mocha": "~1.17"
+    "mocha": "~1.17.1",
+    "should": "~3.1.2"
   },
   "scripts": {
     "test": "mocha"

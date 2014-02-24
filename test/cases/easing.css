@@ -1,0 +1,21 @@
+.test-ease {
+  transition: all 500ms ease;
+}
+.test-ease-in {
+  transition: all 500ms ease-in;
+}
+.test-ease-out {
+  transition: all 500ms ease-out;
+}
+.test-ease-in-out {
+  transition: all 500ms ease-in-out;
+}
+.test-ease-in-sine {
+  transition: all 500ms cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+.test-ease-out-sine {
+  transition: all 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.test-ease-in-out-sine {
+  transition: all 500ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
