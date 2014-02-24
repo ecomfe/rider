@@ -1,0 +1,51 @@
+// typography
+// 
+// @author  firede(firede@firede.us)
+
+
+// hide text
+// @see bit.ly/JanOgS
+hide-text()
+    text-indent: 101%
+    white-space: nowrap
+    overflow: hidden
+
+
+// ellipsis
+// support multi line (webkit only)
+ellipsis($line = 1)
+    overflow: hidden
+    text-overflow: ellipsis
+
+    if $line == 1
+        white-space: nowrap
+    else
+        display: -webkit-box
+        -webkit-line-clamp: $line
+        -webkit-box-orient: vertical
+
+
+// clearfix
+// @see http://h5bp.com/q
+clearfix()
+    &:after,
+    &:before
+        content: ' '
+        display: table
+    &:after
+        clear: both
+
+
+// font face
+// iOS/Android used ttf, Mobile IE 10 used woff.
+font-face($font-family, $font-path, $version-suffix = '')
+    $version-suffix = '?' + $version-suffix if $version-suffix != ''
+    $ttf-path = $font-path + '.ttf' + $version-suffix
+    $woff-path = $font-path + '.woff' + $version-suffix
+
+    @font-face
+        font-family: $font-family
+        src: url($woff-path) format('woff'), url($ttf-path) format('truetype')
+        font-weight: normal
+        font-style: normal
+

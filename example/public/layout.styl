@@ -2,11 +2,7 @@ normalize()
 
 // Fonts
 
-@font-face
-    font-family: 'rider-icon'
-    src:url('font/rider-icon.woff') format('woff'), url('font/rider-icon.ttf') format('truetype')
-    font-weight: normal
-    font-style: normal
+font-face('rider-icon', 'font/rider-icon', '1')
 
 [class^="icon-"], [class*=" icon-"]
     font-family: 'rider-icon'
@@ -27,13 +23,7 @@ normalize()
 .icon-tag:before
     content: "\e603"
 
-@import url("http://fonts.googleapis.com/css?family=Lato:400,300")
-
 // Layout
-
-body
-    font-family: Lato, $-base-font-family
-    font-weight: 300
 
 .appbar
     height: 44px
@@ -43,7 +33,7 @@ body
     color: #FFF
     position: relative
     .title
-        font-weight: 400
+        font-weight: 700
         font-size: rem(16)
         margin: 0 auto
         &.logo

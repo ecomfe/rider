@@ -1,4 +1,4 @@
-// block
+// shape
 // 
 // @author  firede(firede@firede.us)
 
@@ -39,37 +39,4 @@ triangle($direction = top, $size = 10px, $color = #333)
         border-top: $size solid transparent
         border-bottom: $size solid transparent
         border-left: $size solid $color
-
-
-// hide text
-// @see bit.ly/JanOgS
-hide-text()
-    text-indent: 101%
-    white-space: nowrap
-    overflow: hidden
-
-
-// ellipsis
-// support multi line (webkit only)
-ellipsis($line = 1)
-    overflow: hidden
-    text-overflow: ellipsis
-
-    if $line == 1
-        white-space: nowrap
-    else
-        display: -webkit-box
-        -webkit-line-clamp: $line
-        -webkit-box-orient: vertical
-
-
-// clearfix
-// @see http://h5bp.com/q
-clearfix()
-    &:after,
-    &:before
-        content: ' '
-        display: table
-    &:after
-        clear: both
 
