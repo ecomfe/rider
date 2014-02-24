@@ -39,7 +39,7 @@ server.use(stylus.middleware({
 ```
 
 `rider` 是 **无侵入** 风格的 CSS 库，加载后如不调用相关功能，不会生成任何 CSS 代码。
-默认情况下，`rider` 会 **隐式加载** 整个 CSS 库，但我们也提供了配置项关掉这个功能：
+默认情况下，它会 **隐式加载** 整个 CSS 库，但我们也提供了配置项关掉这个功能：
 
 ```js
 function compile(str, path) {
