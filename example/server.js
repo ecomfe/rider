@@ -11,6 +11,7 @@ var app = express();
 function compile(str, path) {
     return stylus(str)
         .set('filename', path)
+        .set('resolve url', true)
         .use(rider())
         .on('end', prefixer);
 }
