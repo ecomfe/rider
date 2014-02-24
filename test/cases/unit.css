@@ -1,0 +1,31 @@
+.test-rem {
+  foo: 1rem;
+  foo: 0.875rem;
+  foo: 1.25rem;
+  foo: 1rem;
+  foo: 0.875rem;
+  foo: 1.25rem;
+  foo: 16rem;
+  foo: 14rem;
+  foo: 20rem;
+  foo: 16rem;
+  foo: 14rem;
+  foo: 20rem;
+}
+.test-em {
+  foo: 1em;
+  foo: 0.875em;
+  foo: 1.25em;
+  foo: 1.6em;
+  foo: 1.4em;
+  foo: 2em;
+  foo: 1em;
+  foo: 1.5em;
+  foo: 1.6em;
+}
+.test-px {
+  foo: 12px;
+  foo: 14px;
+  foo: 16px;
+  foo: 8px;
+}

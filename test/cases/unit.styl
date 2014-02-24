@@ -1,0 +1,37 @@
+// default: $-base-font-size = 16px
+
+// rem
+.test-rem
+    foo: rem(16)
+    foo: rem(14)
+    foo: rem(20)
+    foo: rem(16px)
+    foo: rem(14px)
+    foo: rem(20px)
+    foo: rem(16em)
+    foo: rem(14em)
+    foo: rem(20em)
+    foo: rem(16rem)
+    foo: rem(14rem)
+    foo: rem(20rem)
+
+// em
+.test-em
+    foo: em(16)
+    foo: em(14)
+    foo: em(20)
+    foo: em(16, 10)
+    foo: em(14, 10)
+    foo: em(20, 10)
+    foo: em(1rem)
+    foo: em(1.5rem)
+    foo: em(1rem, 10)
+
+// px
+.test-px
+    foo: px(12)
+    foo: px(14px)
+    foo: px(1rem)
+    foo: px(0.5rem)
+
+// @todo: need test case when default font size is changed.
