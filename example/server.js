@@ -12,7 +12,6 @@ function compile(str, path) {
     return stylus(str)
         .set('filename', path)
         .use(rider())
-        .import('rider')
         .on('end', prefixer);
 }
 
