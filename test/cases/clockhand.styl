@@ -1,0 +1,78 @@
+// absolute
+.test-absolute
+    absolute: 10px _ _
+
+// relative
+.test-relative
+    relative: _ 10px _ _
+
+// fixed
+.test-fixed
+    fixed: 0
+
+// padding
+.test-padding-1
+    padding: 20px
+.test-padding-2
+    padding: 20px _
+
+// margin
+.test-margin-1
+    margin: 10px
+.test-margin-2
+    margin: _ 10px
+
+// border-color
+.test-border-color
+    border-color: #ffa _ #cff
+
+// border-style
+.test-border-style
+    border-style: _ dotted _ _
+
+// border-width
+.test-border-width-1
+    border-width: 2px
+.test-border-width-2
+    border-width: 2px _ 3px
+
+// should not render when all values are omissions
+.clockhand-1
+    clockhand(_)
+    clockhand(_ _)
+    clockhand(_ _ _)
+    clockhand(_ _ _ _)
+
+// 1 args
+.clockhand-2
+    clockhand(1)
+
+// 2 args
+.clockhand-3
+    clockhand(1 _)
+    clockhand(_ 2)
+
+// 3 args
+.clockhand-4
+    clockhand(_ 1 2)
+    clockhand(3 _ 4)
+    clockhand(5 6 _)
+
+// 4 args
+.clockhand-5
+    clockhand(_ 1 2 3)
+    clockhand(4 _ 5 6)
+    clockhand(7 8 _ 9)
+    clockhand(10 11 12 _)
+
+// with prefix
+.clockhand-6
+    clockhand(1 2 3 4, 'foo')
+
+// width prefix and suffix
+.clockhand-7
+    clockhand(1 2 3 4, 'foo', 'bar')
+
+// modified sides
+.clockhand-8
+    clockhand(1 2 3 4, 'foo', '', (a b c d))

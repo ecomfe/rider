@@ -1,0 +1,97 @@
+.test-absolute {
+  position: absolute;
+  top: 10px;
+}
+.test-relative {
+  position: relative;
+  right: 10px;
+}
+.test-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.test-padding-1 {
+  padding: 20px;
+}
+.test-padding-2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.test-margin-1 {
+  margin: 10px;
+}
+.test-margin-2 {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.test-border-color {
+  border-top-color: #ffa;
+  border-bottom-color: #cff;
+}
+.test-border-style {
+  border-right-style: dotted;
+}
+.test-border-width-1 {
+  border-width: 2px;
+}
+.test-border-width-2 {
+  border-top-width: 2px;
+  border-bottom-width: 3px;
+}
+.clockhand-2 {
+  top: 1;
+  right: 1;
+  bottom: 1;
+  left: 1;
+}
+.clockhand-3 {
+  top: 1;
+  bottom: 1;
+  right: 2;
+  left: 2;
+}
+.clockhand-4 {
+  right: 1;
+  bottom: 2;
+  left: 1;
+  top: 3;
+  bottom: 4;
+  top: 5;
+  right: 6;
+  left: 6;
+}
+.clockhand-5 {
+  right: 1;
+  bottom: 2;
+  left: 3;
+  top: 4;
+  bottom: 5;
+  left: 6;
+  top: 7;
+  right: 8;
+  left: 9;
+  top: 10;
+  right: 11;
+  bottom: 12;
+}
+.clockhand-6 {
+  foo-top: 1;
+  foo-right: 2;
+  foo-bottom: 3;
+  foo-left: 4;
+}
+.clockhand-7 {
+  foo-top-bar: 1;
+  foo-right-bar: 2;
+  foo-bottom-bar: 3;
+  foo-left-bar: 4;
+}
+.clockhand-8 {
+  foo-a: 1;
+  foo-b: 2;
+  foo-c: 3;
+  foo-d: 4;
+}
