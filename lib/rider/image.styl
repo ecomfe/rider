@@ -9,7 +9,7 @@
 
 
 // set background image
-bg($path, $width = auto, $height = auto, $dppx = $ImageDPPX)
+bg($path, $width = auto, $height = auto, $dppx = $-image-dppx)
     warn('ir: $path should be a string.') if typeof($path) != 'string'
     background: url($path) no-repeat
 
@@ -27,7 +27,7 @@ bg($path, $width = auto, $height = auto, $dppx = $ImageDPPX)
 
 // image replace
 // hide text and set background image
-ir($path, $x = 0, $y = 0, $width = auto, $height = auto, $dppx = $ImageDPPX)
+ir($path, $x = 0, $y = 0, $width = auto, $height = auto, $dppx = $-image-dppx)
     bg($path, $width, $height, $dppx)
 
     if $x != 0 && $y == 0

@@ -10,13 +10,13 @@
 // default unit is `px`
 rem($value)
     if unit($value) == 'px' || unit($value) == ''
-        $value = round($value / $BaseFontSize, 3)
+        $value = round($value / $-base-font-size, 3)
 
     unit($value, 'rem')
 
 
 // convert to em unit
-em($value, $upper-value = $BaseFontSize)
+em($value, $upper-value = $-base-font-size)
     if unit($value) == 'px' || unit($value) == ''
         $value = round($value / px($upper-value), 3)
     else if unit($value) == 'rem'
@@ -28,6 +28,6 @@ em($value, $upper-value = $BaseFontSize)
 // convert to px unit
 px($value)
     if unit($value) == 'rem'
-        $value = round($value * $BaseFontSize, 3)
+        $value = round($value * $-base-font-size, 3)
 
     unit($value, 'px')
