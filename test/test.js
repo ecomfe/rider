@@ -30,7 +30,13 @@ describe('rider test', function () {
             var styl = fs.readFileSync(stylPath, 'utf8').replace(/\r/g, '');
             var css = fs.readFileSync(cssPath, 'utf8').replace(/\r/g, '').trim();
 
-            var style = stylus(styl).set('filename', path).use(rider());
+            var style = stylus(styl)
+                    .set('filename', path)
+                    .set('paths', [
+                        path.join(__dirname, 'cases')
+                    ])
+                    .set('resolve url', true)
+                    .use(rider());
 
             style.render(function (err, actual) {
                 if (err) throw err;

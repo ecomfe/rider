@@ -10,7 +10,7 @@
 
 // set background image
 bg($path, $width = auto, $height = auto, $dppx = $-image-dppx)
-    warn('ir: $path should be a string.') if typeof($path) != 'string'
+    warn('$path should be a string.') if typeof($path) != 'string'
     background: url($path) no-repeat
 
     if $width in (cover contain) and $height == auto
@@ -21,8 +21,12 @@ bg($path, $width = auto, $height = auto, $dppx = $-image-dppx)
             $width = ($img-size[0] / $dppx)
             $height = ($img-size[1] / $dppx)
         else
-            warn('Automatically get the $width and $height fails, the values has been set to `auto`.')
-    background-size: $width $height
+            $width = null
+            $height = null
+            warn('$width and $height get failed, the values has been set to `auto`.')
+
+    if $width != null || $height != null
+        background-size: $width $height
 
 
 // image replace

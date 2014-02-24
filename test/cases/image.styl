@@ -1,0 +1,52 @@
+// bg($path, $width = auto, $height = auto, $dppx = $-image-dppx)
+
+// external link
+.bg-external-link-1
+    bg: 'http://www.baidu.com/img/bdlogo.gif'
+.bg-external-link-2
+    bg: 'http://www.baidu.com/img/bdlogo.gif' 100px
+.bg-external-link-3
+    bg: 'http://www.baidu.com/img/bdlogo.gif' 100px 50px
+
+// local image
+.bg-local-image-1
+    bg: 'img/logo.png'
+.bg-local-image-2
+    bg: 'img/logo.png' 100px
+.bg-local-image-3
+    bg: 'img/logo.png' 100px 50px
+.bg-local-image-4
+    bg: 'img/logo.png' auto auto 1
+.bg-local-image-5
+    bg: 'img/logo.png' contain
+
+// local image does not exist
+.bg-local-image-not-exist
+    bg: 'img/not-exist.png'
+
+
+// ir($path, $x = 0, $y = 0, $width = auto, $height = auto, $dppx = $-image-dppx)
+
+// external link
+.ir-external-link-1
+    ir: 'http://www.baidu.com/img/bdlogo.gif'
+
+// local image
+.ir-local-image-1
+    ir: 'img/logo.png'
+.ir-local-image-2
+    ir: 'img/logo.png' -10px
+.ir-local-image-3
+    ir: 'img/logo.png' -10px -20px
+.ir-local-image-4
+    ir: 'img/logo.png' center
+.ir-local-image-5
+    ir: 'img/logo.png' -10px -20px 100px
+.ir-local-image-6
+    ir: 'img/logo.png' -10px -20px 100px 50px
+.ir-local-image-7
+    ir: 'img/logo.png' -10px -20px auto auto 1
+
+// local image does not exist
+.ir-local-image-not-exist
+    ir 'img/not-exist.png'
