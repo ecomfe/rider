@@ -1,0 +1,42 @@
+.test-hide-text {
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.test-ellipsis-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.test-ellipsis-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.test-ellipsis-3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.test-clearfix:after,
+.test-clearfix:before {
+  content: ' ';
+  display: table;
+}
+.test-clearfix:after {
+  clear: both;
+}
+@font-face {
+  font-family: 'rider-icon';
+  src: url("font/rider-icon.woff") format('woff'), url("font/rider-icon.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'rider-icon';
+  src: url("font/rider-icon.woff?88") format('woff'), url("font/rider-icon.ttf?88") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
