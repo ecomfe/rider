@@ -1,0 +1,39 @@
+@require 'layout'
+
+.subject
+    border-bottom: 1px solid #f7f7f7
+    font-size: rem(14)
+    font-weight: 400
+    line-height: 2em
+    margin: 5px _
+    font-family: monospace
+
+.result
+    margin-bottom: 15px
+
+.size-test-1
+    display: block
+    size: 50px
+    background: #cde
+
+.size-test-2
+    display: block
+    size: 100px 50px
+    background: #cde
+
+.triangle-test-1
+    triangle: top 10px #369
+
+.triangle-test-2
+    triangle: right 15px #963
+
+.triangle-test-3
+    display: block
+    size: 100px 50px
+    background: #c9c
+    position: relative
+    &:after
+        content: ''
+        absolute: 15px -10px _ _
+        triangle: right 10px #939
+
