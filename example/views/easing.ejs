@@ -13,6 +13,77 @@
             <a class="prev" href="/">back</a>
         </header>
         <div class="container">
+            <div class="tips">点小球看缓动函数效果</div>
+
+            <div class="label">ease-in-sine</div>
+            <div class="item"><div class="ball anim-ease-in-sine"></div></div>
+            <div class="label">ease-out-sine</div>
+            <div class="item"><div class="ball anim-ease-out-sine"></div></div>
+            <div class="label">ease-in-out-sine</div>
+            <div class="item"><div class="ball anim-ease-in-out-sine"></div></div>
+
+            <div class="label">ease-in-quad</div>
+            <div class="item"><div class="ball anim-ease-in-quad"></div></div>
+            <div class="label">ease-out-quad</div>
+            <div class="item"><div class="ball anim-ease-out-quad"></div></div>
+            <div class="label">ease-in-out-quad</div>
+            <div class="item"><div class="ball anim-ease-in-out-quad"></div></div>
+
+            <div class="label">ease-in-cubic</div>
+            <div class="item"><div class="ball anim-ease-in-cubic"></div></div>
+            <div class="label">ease-out-cubic</div>
+            <div class="item"><div class="ball anim-ease-out-cubic"></div></div>
+            <div class="label">ease-in-out-cubic</div>
+            <div class="item"><div class="ball anim-ease-in-out-cubic"></div></div>
+
+            <div class="label">ease-in-quart</div>
+            <div class="item"><div class="ball anim-ease-in-quart"></div></div>
+            <div class="label">ease-out-quart</div>
+            <div class="item"><div class="ball anim-ease-out-quart"></div></div>
+            <div class="label">ease-in-out-quart</div>
+            <div class="item"><div class="ball anim-ease-in-out-quart"></div></div>
+
+            <div class="label">ease-in-quint</div>
+            <div class="item"><div class="ball anim-ease-in-quint"></div></div>
+            <div class="label">ease-out-quint</div>
+            <div class="item"><div class="ball anim-ease-out-quint"></div></div>
+            <div class="label">ease-in-out-quint</div>
+            <div class="item"><div class="ball anim-ease-in-out-quint"></div></div>
+
+            <div class="label">ease-in-expo</div>
+            <div class="item"><div class="ball anim-ease-in-expo"></div></div>
+            <div class="label">ease-out-expo</div>
+            <div class="item"><div class="ball anim-ease-out-expo"></div></div>
+            <div class="label">ease-in-out-expo</div>
+            <div class="item"><div class="ball anim-ease-in-out-expo"></div></div>
+
+            <div class="label">ease-in-circ</div>
+            <div class="item"><div class="ball anim-ease-in-circ"></div></div>
+            <div class="label">ease-out-circ</div>
+            <div class="item"><div class="ball anim-ease-out-circ"></div></div>
+            <div class="label">ease-in-out-circ</div>
+            <div class="item"><div class="ball anim-ease-in-out-circ"></div></div>
+
+            <div class="label">ease-in-back</div>
+            <div class="item"><div class="ball anim-ease-in-back"></div></div>
+            <div class="label">ease-out-back</div>
+            <div class="item"><div class="ball anim-ease-out-back"></div></div>
+            <div class="label">ease-in-out-back</div>
+            <div class="item"><div class="ball anim-ease-in-out-back"></div></div>
+
         </div>
+        <script>
+        window.onload = function () {
+            var items = document.body.querySelectorAll('.item');
+
+            Array.prototype.forEach.call(items, function (item) {
+                item.addEventListener('click', toggleActive.bind(item), false);
+            });
+
+            function toggleActive () {
+                this.classList.toggle('active');
+            }
+        };
+        </script>
     </body>
 </html>

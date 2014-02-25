@@ -1,2 +1,39 @@
 @require 'layout'
 
+.container
+    text-align: center
+
+.tips
+    padding: 10px _
+
+.label
+    width: 280px
+    margin: 8px auto 3px
+    text-align: left
+    padding: 0 10px
+    font-size: rem(12)
+    color: #666
+.item
+    width: 294px
+    margin: 3px auto 8px
+    height: 24px
+    line-height: @height
+    text-align: right
+    background: #EEE
+    border-radius: 15px
+    padding: 3px
+    color: #666
+    .ball
+        size: 24px
+        background: #007aff
+        border-radius: 12px
+        transform: translate3d(0, 0, 0)
+    &.active .ball
+        transform: translate3d(270px, 0, 0)
+
+$anim-list = ('in-sine' 'out-sine' 'in-out-sine' 'in-quad' 'out-quad' 'in-out-quad' 'in-cubic' 'out-cubic' 'in-out-cubic' 'in-quart' 'out-quart' 'in-out-quart' 'in-quint' 'out-quint' 'in-out-quint' 'in-expo' 'out-expo' 'in-out-expo' 'in-circ' 'out-circ' 'in-out-circ' 'in-back' 'out-back' 'in-out-back')
+
+for $anim-name in $anim-list
+    .anim-ease-{unquote($anim-name)}
+        transition: all 1s easing($anim-name)
+
