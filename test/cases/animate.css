@@ -1,0 +1,62 @@
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+.test-1 {
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+}
+.test-2 {
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.test-3 {
+  animation-name: bounceIn;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.test-4 {
+  animation-name: bounceIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
