@@ -1,0 +1,29 @@
+// animate
+// 
+// @author  firede(firede@firede.us)
+// @desc    ported from Animate.css v3
+// @see     http://daneden.github.io/animate.css/
+
+
+animate($name, $duration = 1s, $fill-mode = both)
+    &
+        @require(pathjoin('animate', $name))
+
+    if mixin != 'root'
+        $fill-mode = unquote($fill-mode) if typeof($fill-mode) == 'string'
+        $name = unquote($name) if typeof($name) == 'string'
+
+        animation-name: $name
+        animation-duration: $duration
+        animation-fill-mode: $fill-mode
+
+        // process special animation
+        if $name in (flip flipInX flipInY flipOutX flipOutY)
+            backface-visibility: visible !important
+        if $name == lightSpeedIn
+            animation-timing-function: ease-out
+        if $name == lightSpeedOut
+            animation-timing-function: ease-in
+        if $name == swing
+            transform-origin: top center
+
