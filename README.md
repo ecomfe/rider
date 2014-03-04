@@ -3,6 +3,11 @@ rider [![NPM version](https://badge.fury.io/js/rider.png)](https://npmjs.org/pac
 
 `rider` 是一个基于 [`stylus`](https://github.com/LearnBoost/stylus)、专注于 **移动 Web** 的 CSS 样式库。
 
+配合 edp 使用
+---
+
+`edp` 的用户请移步这里 [`edp-provider-rider`](https://github.com/ecomfe/edp-provider-rider)，查看安装与配置说明。
+
 安装
 ---
 
@@ -11,8 +16,6 @@ rider [![NPM version](https://badge.fury.io/js/rider.png)](https://npmjs.org/pac
     npm install rider --save
 
 依赖信息会自动保存在项目的 `package.json` 中。
-
-**注：** `edp` 的用户请参考 [`edp-provider-rider`](https://github.com/ecomfe/edp-provider-rider)。
 
 配置
 ---
