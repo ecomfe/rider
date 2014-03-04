@@ -1,9 +1,85 @@
-// mixin
+// retina mixin
 .test-1
     +retina()
         foo: bar
 
-// root
+// retina root
 +retina()
     .test-2
         foo: bar
+
+// 1 argument
++breakpoint('screen')
+    .test-3
+        foo: bar
+
+// 2 arguments without comma
++breakpoint('screen' 'portrait')
+    .test-4
+        foo: bar
+
+// 2 arguments with comma
++breakpoint('screen', 'portrait')
+    .test-5
+        foo: bar
+
+// 3 arguments with min-width/max-width
++breakpoint('screen', 'portrait', (2 3))
+    .test-6
+        foo: bar
+
+// with unknown argument should be ignored
++breakpoint('abc', 'portrait')
+    .test-7
+        foo: bar
+
++between(2, 3)
+    .test-8
+        foo: bar
+
++between(0, 4)
+    .test-9
+        foo: bar
+
++at(4)
+    .test-10
+        foo: bar
+
++below(3)
+    .test-11
+        foo: bar
+
++above(4)
+    .test-12
+        foo: bar
+
+// combination
++breakpoint('all' at(3))
+    .test-13
+        foo: bar
+
++breakpoint('print', below(3))
+    .test-14
+        foo: bar
+
++breakpoint('screen', above(3))
+    .test-15
+        foo: bar
+
++breakpoint('screen', between(3, 4))
+    .test-16
+        foo: bar
+
+// breakpoint with px/em/rem unit
++breakpoint(3, 900px)
+    .test-17
+        foo: bar
+
++breakpoint(200px, 900px)
+    .test-18
+        foo: bar
+
++breakpoint(40em, 0)
+    .test-19
+        foo: bar
+
