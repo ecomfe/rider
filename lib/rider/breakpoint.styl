@@ -9,8 +9,9 @@ breakpoint()
     // exception handling
     if length(arguments) < 1
         error('breakpoint requires arguments.')
-    else if mixin != 'block'
-        error('breakpoint must be the "block" when you use it.')
+        return
+    unless mixin in ('block' 'root')
+        error('breakpoint must be the block/root when you use it.')
 
     $mq-array = ()
     $retina-required = false
@@ -58,6 +59,9 @@ breakpoint()
             // retina
             $retina-required = true
 
+        else
+            warn('the argument "' + $arg + '" is unknown, please remove it.') unless $arg == null
+
     // join queries
     $mq-string = join(' and ', $mq-array)
 
@@ -84,7 +88,7 @@ breakpoint()
 
 below($value)
     $values = (0 $value)
-    if mixin == 'block'
+    if mixin in ('block' 'root')
         +breakpoint($values)
             {block}
     else
@@ -93,7 +97,7 @@ below($value)
 
 above($value)
     $values = $value, length($-breakpoint-slice)
-    if mixin == 'block'
+    if mixin in ('block' 'root')
         +breakpoint($values)
             {block}
     else
@@ -104,7 +108,7 @@ at($value)
     if unit($value) != ''
         error('$value must be a breakpoint slice.')
     $values = ($value $value)
-    if mixin == 'block'
+    if mixin in ('block' 'root')
         +breakpoint($values)
             {block}
     else
@@ -113,7 +117,7 @@ at($value)
 
 between($from-value, $to-value)
     $values = ($from-value $to-value)
-    if mixin == 'block'
+    if mixin in ('block' 'root')
         +breakpoint($values)
             {block}
     else
@@ -121,6 +125,7 @@ between($from-value, $to-value)
 
 
 retina()
-    +breakpoint('retina')
-        {block}
+    if mixin in ('block' 'root')
+        +breakpoint('retina')
+            {block}
 
