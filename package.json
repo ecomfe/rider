@@ -1,6 +1,6 @@
 {
   "name": "rider",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Rider is a CSS library to focus on Mobile Web, build on top of Stylus.",
   "maintainers": [
     {
@@ -9,12 +9,12 @@
     }
   ],
   "devDependencies": {
-    "autoprefixer": "~1.1",
-    "stylus": "~0.42.2",
+    "autoprefixer": "~1.1.20140302",
+    "stylus": "~0.42.3",
     "express": "~3.4.8",
     "ejs": "~0.8.5",
     "mocha": "~1.17.1",
-    "should": "~3.1.2"
+    "should": "~3.1.3"
   },
   "scripts": {
     "test": "mocha"
