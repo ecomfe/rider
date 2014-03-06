@@ -34,68 +34,68 @@
 }
 .ir-external-link-1 {
   background: url("http://www.baidu.com/img/bdlogo.gif") no-repeat;
-  text-indent: 101%;
-  white-space: nowrap;
-  overflow: hidden;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
 }
 .ir-local-image-1 {
   background: url("img/logo.png") no-repeat;
   background-size: 75px 44px;
-  text-indent: 101%;
-  white-space: nowrap;
-  overflow: hidden;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
 }
 .ir-local-image-2 {
   background: url("img/logo.png") no-repeat;
   background-size: 75px 44px;
   background-position: -10px;
-  text-indent: 101%;
-  white-space: nowrap;
-  overflow: hidden;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
 }
 .ir-local-image-3 {
   background: url("img/logo.png") no-repeat;
   background-size: 75px 44px;
   background-position: -10px -20px;
-  text-indent: 101%;
-  white-space: nowrap;
-  overflow: hidden;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
 }
 .ir-local-image-4 {
   background: url("img/logo.png") no-repeat;
   background-size: 75px 44px;
   background-position: center;
-  text-indent: 101%;
-  white-space: nowrap;
-  overflow: hidden;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
 }
 .ir-local-image-5 {
   background: url("img/logo.png") no-repeat;
   background-size: 100px auto;
   background-position: -10px -20px;
-  text-indent: 101%;
-  white-space: nowrap;
-  overflow: hidden;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
 }
 .ir-local-image-6 {
   background: url("img/logo.png") no-repeat;
   background-size: 100px 50px;
   background-position: -10px -20px;
-  text-indent: 101%;
-  white-space: nowrap;
-  overflow: hidden;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
 }
 .ir-local-image-7 {
   background: url("img/logo.png") no-repeat;
   background-size: 150px 88px;
   background-position: -10px -20px;
-  text-indent: 101%;
-  white-space: nowrap;
-  overflow: hidden;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
 }
 .ir-local-image-not-exist {
   background: url("img/not-exist.png") no-repeat;
-  text-indent: 101%;
-  white-space: nowrap;
-  overflow: hidden;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
 }

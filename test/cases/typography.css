@@ -1,7 +1,7 @@
 .test-hide-text {
-  text-indent: 101%;
-  white-space: nowrap;
-  overflow: hidden;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
 }
 .test-ellipsis-1 {
   overflow: hidden;
