@@ -63,3 +63,18 @@ normalize()
 
 // etc...
 ```
+
+DEMO
+---
+
+发布至 `npm` 的版本是不包含 `demo` 和 `test` 的，所以需要先将仓库 clone 到本地。
+
+在根目录执行：
+
+```shell
+$ node demo/server.js
+```
+
+访问网址：
+
+    http://localhost:8848
