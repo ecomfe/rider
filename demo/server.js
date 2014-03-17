@@ -17,7 +17,7 @@ function compile(str, path) {
 }
 
 function prefixer(err, css) {
-    return ap("android >= 2.3", "ios >= 5").process(css).css;
+    return ap('android >= 2.3', 'ios >= 5', 'ie 10').process(css).css;
 }
 
 app.set('port', process.env.PORT || 8848);
@@ -26,7 +26,6 @@ app.set('view engine', 'ejs');
 app.use(express.logger('dev'));
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.favicon());
 app.use(stylus.middleware({
     src: path.join(__dirname, 'public'),
     compile: compile

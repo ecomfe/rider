@@ -1,0 +1,119 @@
+// initialize
+// 
+// @author  firede(firede@firede.us)
+
+
+@require 'setting'
+
+// reset font
+reset-font()
+    font-weight: inherit
+    font-style: inherit
+    font-family: inherit
+    font-size: 100%
+    vertical-align: baseline
+
+
+// reset box model
+// about `outline`: for accessibility, keep it.
+reset-box-model()
+    margin: 0
+    padding: 0
+    border: 0
+
+
+// rest list
+reset-list()
+    list-style: none
+    li
+        padding: 0
+        margin: 0
+
+
+// reset-table
+// `border-spacing` is unnecessary when `collapse`, so I removed it.
+reset-table()
+    border-collapse: collapse
+    vertical-align: middle
+
+
+// reset table cell
+reset-table-cell()
+    text-align: left
+    font-weight: normal
+    vertical-align: middle
+
+
+initialize()
+
+    // reset
+
+    html, body, div, span, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    abbr, address, cite, code,
+    del, dfn, em, img, ins, kbd, q, samp,
+    small, strong, sub, sup, var,
+    b, i,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, ruby, section, summary,
+    time, mark, audio, video
+        reset-box-model()
+        reset-font()
+
+    ol, ul
+        reset-list()
+
+    table
+        reset-table()
+
+    caption, th, td
+        reset-table-cell()
+
+    blockquote, q
+        quotes: none
+
+    blockquote:before, blockquote:after,
+    q:before, q:after
+        // `content: ""` is unnecessary, the bug has been fixed 4 years:
+        // http://bit.ly/1lEHB5m
+        content: none
+
+    body
+        line-height: 1
+
+
+    // normalize
+
+    // Prevent modern browsers from displaying `audio` without controls.
+    // Remove excess height in iOS 5 devices.
+    audio:not([controls])
+        display: none
+        height: 0
+
+    // Hide the `template` element in IE, Safari, and Firefox < 22.
+    template
+        display: none
+
+    html
+        font-size: unit($-base-font-size / 16 * 100, '%')
+        font-family: $-base-font-family
+
+        if $-prevent-text-size-adjust == true
+            -webkit-text-size-adjust: 100%
+            -ms-text-size-adjust: 100%
+
+        if $-prevent-user-select == true
+            user-select: none
+
+    // tap highlight color
+    if $-prevent-tap-highlight == true
+        a
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+            -webkit-tap-highlight-color: transparent
+
+
+
