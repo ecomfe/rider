@@ -59,7 +59,7 @@ function compile(str, path) {
 ```stylus
 @require 'rider'
 
-normalize()
+initialize()
 
 // etc...
 ```
