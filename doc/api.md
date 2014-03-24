@@ -402,3 +402,54 @@ font-face('rider-icon', 'font/rider-icon', '88')
     font-style: normal;
 }
 ```
+
+## 单位转换
+
+### rem(value)
+
+转换成单位为 `rem` 的值，`value` 支持的单位有 `rem` 与 `px`，不带单位默认为 `px`。
+
+**使用方法**
+
+```stylus
+.box
+    font-size: rem(20)
+    // => font-size: 1.25rem;
+    font-size: rem(14px)
+    // => font-size: 0.875rem;
+    font-size: rem(2rem)
+    // => font-size: 2rem;
+```
+
+### px(value)
+
+转换成单位为 `px` 的值，`value` 支持的单位有 `rem` 与 `px`，不带单位默认为 `px`。
+
+**使用方法**
+
+```stylus
+.box
+    width: px(1rem)
+    // => width: 16px;
+    width: px(1.5rem)
+    // => width: 24px;
+    width: px(20)
+    // => width: 20px;
+```
+
+### em(value, upper-value)
+
+转换成单位为 `em` 的值，`upper-value` 是手动传入的继承自上层元素的值（默认为 `$-base-font-size`）。
+`value` 支持的单位有 `rem` 与 `px`，不带单位默认为 `px`。
+
+**使用方法**
+
+```stylus
+.box
+    foo: em(20)
+    // => foo: 1.25em;
+    foo: em(16, 10)
+    // => foo: 1.6em;
+    foo: em(1rem, 10)
+    // => foo: 1.6em;
+```
