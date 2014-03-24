@@ -88,3 +88,120 @@
 
     normalize-form()
 
+## 顺时针简写
+
+在 `CSS` 语法中，可以通过 `顺时针` 的方式简写属性的值，比如 `padding`、`margin` 等。其规则如下：
+
+    上 右 下 左 => 1 2 3 4
+    上 右 下 => 1 2 3 2
+    上 右 => 1 2 1 2
+    上 => 1 1 1 1
+
+**顺时针简写** 增加了 `_` 占位符来表示 **不定义** 的状态，下面的文档中会有示例。
+
+### absolute: top[ right[ bottom[ left]]]
+
+将当前容器设为 `absolute`，并设置定位的值。
+
+**使用方法**
+
+    .box
+        absolute: 0
+        // => position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+
+        absolute: _ 10px 20px
+        // => position: absolute; right: 10px; bottom: 20px; left: 10px;
+
+### fixed: top[ right[ bottom[ left]]]
+
+将当前容器设为 `fixed`，并设置定位的值。
+
+**使用方法**
+
+    .box
+        fixed: _ 20px 0 _
+        // => position: fixed; right: 20px; bottom: 0;
+
+### relative: top[ right[ bottom[ left]]]
+
+将当前容器设为 `relative`，并设置定位的值。
+
+**使用方法**
+
+    .box
+        relative: 10px _ _ _
+        // => position: relative; top: 10px;
+
+### padding: padding-top[ padding-right[ padding-bottom[ padding-left]]]
+
+替换了CSS的 `padding`，处理使用了 `_` 占位符的情况。
+
+**使用方法**
+
+    .box
+        padding: 20px
+        // => padding: 20px;
+
+        padding: 5px _
+        // => padding-top: 5px; padding-bottom: 5px;
+
+### margin: margin-top[ margin-right[ margin-bottom[ margin-left]]]
+
+替换了CSS的 `margin`，处理使用了 `_` 占位符的情况。
+
+**使用方法**
+
+    .box
+        margin: _ 5px
+        // => margin-right: 5px; padding-left: 5px;
+
+### border-color: border-top-color[ border-right-color[ border-bottom-color[ border-left-color]]]
+
+替换了CSS的 `border-color`，处理使用了 `_` 占位符的情况。
+
+**使用方法**
+
+    .box
+        border-color: _ red
+        // => border-right-color: red; border-left-color: red;
+
+### border-style: border-top-style[ border-right-style[ border-bottom-style[ border-left-style]]]
+
+替换了CSS的 `border-style`，处理使用了 `_` 占位符的情况。
+
+### border-width: border-top-width[ border-right-width[ border-bottom-width[ border-left-width]]]
+
+替换了CSS的 `border-width`，处理使用了 `_` 占位符的情况。
+
+### clockhand($values, $property-prefix, $property-suffix, $sides)
+
+生成符合 **顺时针简写** 规则的属性，很少会直接用到。
+
+**使用方法**
+
+    .test
+        clockhand(1 2 3 4, 'foo', 'bar', (a b c d))
+        // => foo-a-bar: 1; foo-b-bar: 2; foo-c-bar: 3; foo-d-bar: 4;
+
+## 缓动函数
+
+### easing(type)
+
+CSS默认提供的缓动函数有限，我们通过贝塞尔曲线对缓动函数进行了扩充。各缓动函数的效果可以参考 [easings.net](http://easings.net/zh-cn)。
+
+支持的缓动函数类型有：
+
+    'in-sine' 'out-sine' 'in-out-sine'
+    'in-quad' 'out-quad' 'in-out-quad'
+    'in-cubic' 'out-cubic' 'in-out-cubic'
+    'in-quart' 'out-quart' 'in-out-quart'
+    'in-quint' 'out-quint' 'in-out-quint'
+    'in-expo' 'out-expo' 'in-out-expo'
+    'in-circ' 'out-circ' 'in-out-circ'
+    'in-back' 'out-back' 'in-out-back'
+
+**使用方法**
+
+    .box
+        transition: all 1s easing('in-sine')
+        // => transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
