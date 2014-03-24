@@ -44,6 +44,52 @@ reset-table-cell()
     vertical-align: middle
 
 
+normalize-form()
+    // 1. Correct color not being inherited.
+    //    Known issue: affects color of disabled elements.
+    // 2. Correct font properties not being inherited.
+    // 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+    button,
+    input,
+    optgroup,
+    select,
+    textarea
+        reset-font()
+        color: inherit
+        margin: 0
+
+    // Address `overflow` set to `hidden` in IE 8/9/10/11.
+    button
+        overflow: visible
+
+    // 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+    //    and `video` controls.
+    // 2. Correct inability to style clickable `input` types in iOS.
+    button,
+    html input[type="button"],
+    input[type="reset"],
+    input[type="submit"]
+        -webkit-appearance: button
+
+    input[type="checkbox"],
+    input[type="radio"]
+        box-sizing: border-box
+        padding: 0
+
+    input[type="number"]::-webkit-inner-spin-button
+    input[type="number"]::-webkit-outer-spin-button
+        height: auto
+
+    input[type="search"]
+        -webkit-appearance: textfield
+        -webkit-box-sizing: content-box
+        box-sizing: content-box
+
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-decoration
+        -webkit-appearance: none
+
+
 initialize()
 
     // reset
@@ -115,5 +161,5 @@ initialize()
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
             -webkit-tap-highlight-color: transparent
 
-
+    normalize-form()
 
