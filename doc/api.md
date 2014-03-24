@@ -542,6 +542,8 @@ css:
 
 **使用方法**
 
+stylus:
+
 ```stylus
 // root
 animate('flash')
@@ -550,6 +552,8 @@ animate('flash')
 .test
     animate('bounce', 0.5s)
 ```
+
+css:
 
 ```css
 @keyframes flash {
