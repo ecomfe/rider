@@ -8,7 +8,7 @@
 ---|---|---
 `$-base-font-size` | `16px` | 用于设置默认文字大小、常用单位的转换
 `$-base-font-family` | `'Helvetica Neue', sans-serif` | 默认字体
-`$-prevent-user-select` | `false` | 屏蔽用户选择文本的能力，通常只在 Hybrid App 场景启用
+`$-prevent-user-select` | `false` | 屏蔽用户选择文本的能力，通常用在 Hybrid App 场景
 `$-prevent-text-size-adjust` | `true` | 屏蔽屏幕翻转时，浏览器缩放字体的行为
 `$-prevent-tap-highlight` | `true` | 屏蔽 `a` 标签的点击高亮效果
 `$-image-dppx` | `2` | 图片每像素的点数，用于支持 retina 设备
@@ -509,3 +509,75 @@ css:
     border-bottom: 5px solid #369;
 }
 ```
+
+## 动画
+
+### animate: name, duration, fill-mode
+
+快速应用 `animate.css` 中的动画。
+
+当应用在 `CSS root` 时，只生成动画的 `@keyframes`。
+
+只有在用了当前动画时，才会生成动画的 `@keyframes`，并且同一动画效果只生成一次。
+
+支持的动画有：
+
+    bounce bounceIn bounceInDown bounceInLeft bounceInRight bounceInUp
+    bounceOut bounceOutDown bounceOutLeft bounceOutRight bounceOutUp
+    fadeIn fadeInDown fadeInLeft fadeInRight fadeInUp fadeOut fadeOutDown
+    fadeOutLeft fadeOutRight fadeOutUp flash flip flipInX flipInY
+    flipOutX flipOutY hinge lightSpeedIn lightSpeedOut pulse rollIn rollOut
+    rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight
+    rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft
+    rotateOutUpRight rubberBand shake slideInDown slideInLeft slideInRight
+    slideOutLeft slideOutRight slideOutUp swing tada wobble
+
+动画效果可以参考 [Animate.css](http://daneden.github.io/animate.css/)
+
+**参数说明**
+
++ `name` 动画名称，支持的动画见上表
++ `duration` `(可选)` 持续时间，默认为 `1s`
++ `fill-mode` `(可选)` 播放后的状态，默认为 `both`
+
+**使用方法**
+
+```stylus
+// root
+animate('flash')
+
+// mixin
+.test
+    animate('bounce', 0.5s)
+```
+
+```css
+@keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+    }
+}
+.test {
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+```
+
