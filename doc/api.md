@@ -174,14 +174,14 @@
 
 替换了CSS的 `border-width`，处理使用了 `_` 占位符的情况。
 
-### clockhand($values, $property-prefix, $property-suffix, $sides)
+### clockhand: values, property-prefix, property-suffix, sides
 
 生成符合 **顺时针简写** 规则的属性，很少会直接用到。
 
 **使用方法**
 
     .test
-        clockhand(1 2 3 4, 'foo', 'bar', (a b c d))
+        clockhand: 1 2 3 4, 'foo', 'bar', (a b c d)
         // => foo-a-bar: 1; foo-b-bar: 2; foo-c-bar: 3; foo-d-bar: 4;
 
 
@@ -211,6 +211,9 @@ CSS默认提供的缓动函数有限，我们通过贝塞尔曲线对缓动函�
 
 
 ## 图片
+
+从现在移动端的场景来看，retina 设备已经占了绝大多数，所以采用默认使用高清图片的方案。
+纯移动端下将不再使用 `原图 + @2x图` 的方式对 retina 做支持。
 
 ### bg: path, width, height, dppx
 
@@ -287,3 +290,115 @@ css:
 }
 ```
 
+## 排版
+
+### clearfix()
+
+清除浮动。
+
+**使用方法**
+
+stylus:
+
+```stylus
+.test
+    clearfix()
+```
+
+css:
+
+```css
+.test:after,
+.test:before {
+    content: ' ';
+    display: table;
+}
+.test:after {
+    clear: both;
+}
+```
+
+### hide-text()
+
+隐藏容器内的文字。
+
+**使用方法**
+
+stylus:
+
+```stylus
+.test
+    hide-text()
+```
+
+css:
+
+```css
+.test {
+    color: transparent;
+    font: 0/0 a;
+    text-shadow: none;
+}
+```
+
+### ellipsis(line)
+
+溢出文本显示省略号。
+
+不填行号默认为 **单行阶段**。
+**多行阶段** 功能仅在 `webkit` 内核下有效，且要保证容器上下的 `padding` 为零（否则会溢出）。
+
+**使用方法**
+
+stylus:
+
+```stylus
+.test-s
+    ellipsis()
+.test-m
+    ellipsis(3)
+```
+
+css:
+
+```css
+.test-s {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.test-m {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+```
+
+### font-face: font-family, font-path, version-suffix
+
+快速引入字体。
+
+**参数说明**
+
++ `font-family` 字体名
++ `font-path` 字体路径，是字体去掉后缀名之后的部分
++ `version-suffix` `(选填)` 版本后缀，用来更新字体版本
+
+**使用方法**
+
+stylus:
+
+```stylus
+font-face('rider-icon', 'font/rider-icon', '88')
+```
+
+```css
+@font-face {
+    font-family: 'rider-icon';
+    src: url("font/rider-icon.woff?88") format('woff'), url("font/rider-icon.ttf?88") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+```

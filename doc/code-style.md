@@ -28,7 +28,7 @@ Mixin 字母全小写，多个单词用 `-` 连接，如：
 通常，`rider` 推荐的代码风格是这样的：
 
 ```haml
-// 当 Mixin 为空时，加括号表示执行 Mixin
+// 当 Mixin 为空时，加括号执行
 initialize()
 
 .box
@@ -39,4 +39,8 @@ initialize()
     box-shadow: 2px 2px 5px #999
     // 使用 Function 时，加括号传递参数
     font-size: rem(14)
+
+// 当 Mixin 应用于 CSS root 时，加括号执行
+font-face('rider-icon', 'font/rider-icon')
 ```
+
