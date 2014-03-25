@@ -6,9 +6,9 @@ rider [![NPM version](https://badge.fury.io/js/rider.png)](https://npmjs.org/pac
 文档
 ---
 
-+ [代码风格](./doc/code-style.md)
-+ [常见问题](./doc/faq.md)
-+ [API](./doc/api.md)
++ [代码风格](./docs/code-style.md)
++ [常见问题](./docs/faq.md)
++ [API](./docs/api.md)
 
 配合 edp 使用
 ---
