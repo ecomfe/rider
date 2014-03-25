@@ -33,7 +33,9 @@
 
 **使用方法**
 
-    initialize()
+```haml
+initialize()
+```
 
 ### reset-font()
 
@@ -41,8 +43,10 @@
 
 **使用方法**
 
-    .box
-        reset-font()
+```haml
+.box
+    reset-font()
+```
 
 ### reset-box-model()
 
@@ -50,8 +54,10 @@
 
 **使用方法**
 
-    body
-        reset-box-model()
+```haml
+body
+    reset-box-model()
+```
 
 ### reset-list()
 
@@ -59,8 +65,10 @@
 
 **使用方法**
 
-    .menu-list
-        reset-list()
+```haml
+.menu-list
+    reset-list()
+```
 
 ### reset-table()
 
@@ -68,8 +76,10 @@
 
 **使用方法**
 
-    .data-table
-        reset-table()
+```haml
+.data-table
+    reset-table()
+```
 
 ### reset-table-cell()
 
@@ -77,8 +87,10 @@
 
 **使用方法**
 
-    .data-table td
-        reset-table-cell()
+```haml
+.data-table td
+    reset-table-cell()
+```
 
 ### normalize-form()
 
@@ -86,7 +98,9 @@
 
 **使用方法**
 
-    normalize-form()
+```haml
+normalize-form()
+```
 
 
 ## 顺时针简写
@@ -106,12 +120,14 @@
 
 **使用方法**
 
-    .box
-        absolute: 0
-        // => position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+```haml
+.box
+    absolute: 0
+    // => position: absolute; top: 0; right: 0; bottom: 0; left: 0;
 
-        absolute: _ 10px 20px
-        // => position: absolute; right: 10px; bottom: 20px; left: 10px;
+    absolute: _ 10px 20px
+    // => position: absolute; right: 10px; bottom: 20px; left: 10px;
+```
 
 ### fixed: top right bottom left
 
@@ -119,9 +135,11 @@
 
 **使用方法**
 
-    .box
-        fixed: _ 20px 0 _
-        // => position: fixed; right: 20px; bottom: 0;
+```haml
+.box
+    fixed: _ 20px 0 _
+    // => position: fixed; right: 20px; bottom: 0;
+```
 
 ### relative: top right bottom left
 
@@ -129,9 +147,11 @@
 
 **使用方法**
 
-    .box
-        relative: 10px _ _ _
-        // => position: relative; top: 10px;
+```haml
+.box
+    relative: 10px _ _ _
+    // => position: relative; top: 10px;
+```
 
 ### padding: padding-top padding-right padding-bottom padding-left
 
@@ -139,12 +159,14 @@
 
 **使用方法**
 
-    .box
-        padding: 20px
-        // => padding: 20px;
+```haml
+.box
+    padding: 20px
+    // => padding: 20px;
 
-        padding: 5px _
-        // => padding-top: 5px; padding-bottom: 5px;
+    padding: 5px _
+    // => padding-top: 5px; padding-bottom: 5px;
+```
 
 ### margin: margin-top margin-right margin-bottom margin-left
 
@@ -152,9 +174,11 @@
 
 **使用方法**
 
-    .box
-        margin: _ 5px
-        // => margin-right: 5px; padding-left: 5px;
+```haml
+.box
+    margin: _ 5px
+    // => margin-right: 5px; padding-left: 5px;
+```
 
 ### border-color: border-top-color border-right-color border-bottom-color border-left-color
 
@@ -162,9 +186,11 @@
 
 **使用方法**
 
-    .box
-        border-color: _ red
-        // => border-right-color: red; border-left-color: red;
+```haml
+.box
+    border-color: _ red
+    // => border-right-color: red; border-left-color: red;
+```
 
 ### border-style: border-top-style border-right-style border-bottom-style border-left-style
 
@@ -180,9 +206,11 @@
 
 **使用方法**
 
-    .test
-        clockhand: 1 2 3 4, 'foo', 'bar', (a b c d)
-        // => foo-a-bar: 1; foo-b-bar: 2; foo-c-bar: 3; foo-d-bar: 4;
+```haml
+.test
+    clockhand: 1 2 3 4, 'foo', 'bar', (a b c d)
+    // => foo-a-bar: 1; foo-b-bar: 2; foo-c-bar: 3; foo-d-bar: 4;
+```
 
 
 ## 缓动函数
@@ -206,10 +234,11 @@ CSS默认提供的缓动函数有限，我们通过贝塞尔曲线对缓动函�
 
 **使用方法**
 
-    .box
-        transition: all 1s easing('in-sine')
-        // => transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
-
+```haml
+.box
+    transition: all 1s easing('in-sine')
+    // => transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
+```
 
 ## 图片
 
@@ -234,7 +263,7 @@ CSS默认提供的缓动函数有限，我们通过贝塞尔曲线对缓动函�
 
 stylus:
 
-```stylus
+```haml
 // 图片实际大小为 150px * 88px，自动获取时根据 dppx 进行缩放
 .test-1
     bg: 'img/logo.png'
@@ -274,7 +303,7 @@ css:
 
 stylus:
 
-```stylus
+```haml
 .test
     ir: 'img/logo.png' -10px -20px 100px
 ```
@@ -302,7 +331,7 @@ css:
 
 stylus:
 
-```stylus
+```haml
 .test
     clearfix()
 ```
@@ -328,7 +357,7 @@ css:
 
 stylus:
 
-```stylus
+```haml
 .test
     hide-text()
 ```
@@ -355,7 +384,7 @@ css:
 
 stylus:
 
-```stylus
+```haml
 .test-s
     ellipsis()
 .test-m
@@ -393,7 +422,7 @@ css:
 
 stylus:
 
-```stylus
+```haml
 font-face('rider-icon', 'font/rider-icon', '88')
 ```
 
@@ -414,7 +443,7 @@ font-face('rider-icon', 'font/rider-icon', '88')
 
 **使用方法**
 
-```stylus
+```haml
 .box
     font-size: rem(20)
     // => font-size: 1.25rem;
@@ -430,7 +459,7 @@ font-face('rider-icon', 'font/rider-icon', '88')
 
 **使用方法**
 
-```stylus
+```haml
 .box
     width: px(1rem)
     // => width: 16px;
@@ -448,7 +477,7 @@ font-face('rider-icon', 'font/rider-icon', '88')
 
 **使用方法**
 
-```stylus
+```haml
 .box
     foo: em(20)
     // => foo: 1.25em;
@@ -471,7 +500,7 @@ font-face('rider-icon', 'font/rider-icon', '88')
 
 **使用方法**
 
-```stylus
+```haml
 .box
     size: 10em
     // => width: 10em; height: 10em;
@@ -493,7 +522,7 @@ font-face('rider-icon', 'font/rider-icon', '88')
 
 stylus:
 
-```stylus
+```haml
 .test
     triangle: top 5px #369
 ```
@@ -544,7 +573,7 @@ css:
 
 stylus:
 
-```stylus
+```haml
 // root
 animate('flash')
 
@@ -592,8 +621,8 @@ css:
 在实现 **响应式布局** 时，可以按照屏幕宽度分为几个范围，这几个范围用数字来表明：
 
     Breakpoint: 0                 400px     600px     800px       1050px
-                ├───────────────────┼─────────┼─────────┼───────────┼─────────>
-    切片 #:               1              2         3          4          5
+                ├───────────────────┼─────────┼──────────┼───────────┼─────────>
+    切片 #:               1              2          3          4          5
 
 这样可以使用 `切片` 编号直接指定样式应用范围。
 
@@ -611,7 +640,7 @@ css:
 
 stylus:
 
-```stylus
+```haml
 .test
     +retina()
         foo: bar
@@ -632,10 +661,10 @@ css:
 限定低于目标尺寸或 **切片** 边界值。
 
     Breakpoint: 0                 400px     600px     800px       1050px
-                ├───────────────────┼─────────┼-─────────┼───────────┼─────────>
+                ├───────────────────┼─────────┼──────────┼───────────┼─────────>
     切片 #:               1              2         3           4          5
                 ·                   ·         · below(3) ·           ·
-                <───-─────────────────────────────────-──┤
+                <────────────────────────────────────────┤
 
 
 `value` 带单位时为具体的值，不带单位时根据 **切片** 边界值配置。
@@ -644,7 +673,7 @@ css:
 
 stylus:
 
-```stylus
+```haml
 +below(3)
     .test
         foo: bar
@@ -665,10 +694,10 @@ css:
 限定高于目标尺寸或 **切片** 边界值。
 
     Breakpoint: 0                 400px     600px     800px       1050px
-                ├───────────────────┼─────────┼-─────────┼───────────┼─────────>
+                ├───────────────────┼─────────┼──────────┼───────────┼─────────>
     切片 #:               1              2         3           4          5
                 ·                   ·         · above(3) ·           ·
-                                              ├───────-──---------------------->
+                                              ├────────────────────────────────>
 
 `value` 带单位时为具体的值，不带单位时根据 **切片** 边界值配置。
 
@@ -676,7 +705,7 @@ css:
 
 stylus:
 
-```stylus
+```haml
 +above(3)
     .test
         foo: bar
@@ -697,16 +726,16 @@ css:
 限定指定 **切片** 范围。`value` 为切片编号。
 
     Breakpoint: 0                 400px     600px     800px       1050px
-                ├───────────────────┼─────────┼-─────────┼───────────┼─────────>
+                ├───────────────────┼─────────┼──────────┼───────────┼─────────>
     切片 #:               1              2         3           4          5
                 ·                   ·         ·   at(3)  ·           ·
-                                              ├───────-──┤
+                                              ├──────────┤
 
 **使用方法**
 
 stylus:
 
-```stylus
+```haml
 +at(3)
     .test
         foo: bar
@@ -727,10 +756,10 @@ css:
 限定目标尺寸或 **切片** 边界值的区间。
 
     Breakpoint: 0                 400px     600px     800px       1050px
-                ├───────────────────┼─────────┼-─────────┼───────────┼─────────>
+                ├───────────────────┼─────────┼──────────┼───────────┼─────────>
     切片 #:               1              2         3           4          5
                 ·                   ·     between(3)     ·           ·
-                                    ├───────-─----------─┤
+                                    ├────────────────────┤
 
 `value` 带单位时为具体的值，不带单位时根据 **切片** 边界值配置。
 
@@ -738,7 +767,7 @@ css:
 
 stylus:
 
-```stylus
+```haml
 +between(2, 3)
     .test
         foo: bar
@@ -767,13 +796,11 @@ css:
 
     'portrait' 'landscape'
 
-支持的
-
 **使用方法**
 
 stylus:
 
-```stylus
+```haml
 .test-1
     +breakpoint('screen', 'portrait', between(2 3))
         foo: bar
