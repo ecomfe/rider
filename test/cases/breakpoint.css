@@ -93,3 +93,9 @@
     foo: bar;
   }
 }
+@media (min-width: 600px) and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 600px) and (max-width: 800px) and (min-resolution: 125dpi) {
+  .test-20 {
+    foo: bar;
+  }
+}
+
