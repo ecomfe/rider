@@ -585,3 +585,215 @@ css:
 }
 ```
 
+## Breakpoint
+
+`Breakpoint` 是支持 **响应式布局** 的工具，作为 `block mixin` 调用。
+
+在实现 **响应式布局** 时，可以按照屏幕宽度分为几个范围，这几个范围用数字来表明：
+
+    Breakpoint: 0                 400px     600px     800px       1050px
+                ├───────────────────┼─────────┼─────────┼───────────┼─────────>
+    切片 #:               1              2         3          4          5
+
+这样可以使用 `切片` 编号直接指定样式应用范围。
+
+范围分组根据 `$-breakpoint-slice` 的配置决定。
+
+这种思路来自 [breakpoint-slicer](https://github.com/lolmaus/breakpoint-slicer)。
+
+因为 `@media` 标签无法嵌套使用，`rider` 在其思路的基础上实现了规则的组合，以便适应复杂场景。
+
+### +retina()
+
+限定高清设备。`dppx` 在 `1.3` 以上即认为是 `retina` 设备。
+
+**使用方法**
+
+stylus:
+
+```stylus
+.test
+    +retina()
+        foo: bar
+```
+
+css:
+
+```css
+@media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 125dpi) {
+    .test {
+        foo: bar;
+    }
+}
+```
+
+### +below(value)
+
+限定低于目标尺寸或 **切片** 边界值。
+
+    Breakpoint: 0                 400px     600px     800px       1050px
+                ├───────────────────┼─────────┼-─────────┼───────────┼─────────>
+    切片 #:               1              2         3           4          5
+                ·                   ·         · below(3) ·           ·
+                <───-─────────────────────────────────-──┤
+
+
+`value` 带单位时为具体的值，不带单位时根据 **切片** 边界值配置。
+
+**使用方法**
+
+stylus:
+
+```stylus
++below(3)
+    .test
+        foo: bar
+```
+
+css:
+
+```css
+@media (max-width: 800px) {
+    .test {
+        foo: bar;
+    }
+}
+```
+
+### +above(value)
+
+限定高于目标尺寸或 **切片** 边界值。
+
+    Breakpoint: 0                 400px     600px     800px       1050px
+                ├───────────────────┼─────────┼-─────────┼───────────┼─────────>
+    切片 #:               1              2         3           4          5
+                ·                   ·         · above(3) ·           ·
+                                              ├───────-──---------------------->
+
+`value` 带单位时为具体的值，不带单位时根据 **切片** 边界值配置。
+
+**使用方法**
+
+stylus:
+
+```stylus
++above(3)
+    .test
+        foo: bar
+```
+
+css:
+
+```css
+@media (min-width: 600px) {
+    .test {
+        foo: bar;
+    }
+}
+```
+
+### +at(value)
+
+限定指定 **切片** 范围。`value` 为切片编号。
+
+    Breakpoint: 0                 400px     600px     800px       1050px
+                ├───────────────────┼─────────┼-─────────┼───────────┼─────────>
+    切片 #:               1              2         3           4          5
+                ·                   ·         ·   at(3)  ·           ·
+                                              ├───────-──┤
+
+**使用方法**
+
+stylus:
+
+```stylus
++at(3)
+    .test
+        foo: bar
+```
+
+css:
+
+```css
+@media (min-width: 600px) and (max-width: 800px) {
+    .test {
+        foo: bar;
+    }
+}
+```
+
+### +between(from-value, to-value)
+
+限定目标尺寸或 **切片** 边界值的区间。
+
+    Breakpoint: 0                 400px     600px     800px       1050px
+                ├───────────────────┼─────────┼-─────────┼───────────┼─────────>
+    切片 #:               1              2         3           4          5
+                ·                   ·     between(3)     ·           ·
+                                    ├───────-─----------─┤
+
+`value` 带单位时为具体的值，不带单位时根据 **切片** 边界值配置。
+
+**使用方法**
+
+stylus:
+
+```stylus
++between(2, 3)
+    .test
+        foo: bar
+```
+
+css:
+
+```css
+@media (min-width: 400px) and (max-width: 800px) {
+    .test {
+        foo: bar;
+    }
+}
+```
+
+### +breakpoint()
+
+`breakpoint()` 允许在参数中传入以上限定条件，以及 `media type`、`orientation` 类型条件，组合限定范围。
+
+支持的 `media type`：
+
+    'all' 'screen' 'print' 'tv' 'braille' 'embossed'
+    'handheld' 'projection' 'speech' 'tty'
+
+支持的 `orientation`：
+
+    'portrait' 'landscape'
+
+支持的
+
+**使用方法**
+
+stylus:
+
+```stylus
+.test-1
+    +breakpoint('screen', 'portrait', between(2 3))
+        foo: bar
+
+.test-2
+    +breakpoint('retina', at(3))
+        foo: bar
+```
+
+css:
+
+```css
+@media screen and (orientation: portrait) and (min-width: 400px) and (max-width: 800px) {
+    .test-1 {
+        foo: bar;
+    }
+}
+@media (min-width: 600px) and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 600px) and (max-width: 800px) and (min-resolution: 125dpi) {
+    .test-2 {
+        foo: bar;
+    }
+}
+```
