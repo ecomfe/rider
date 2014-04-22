@@ -8,8 +8,8 @@ rider [![NPM version](https://badge.fury.io/js/rider.png)](https://npmjs.org/pac
 
 + 安装与配置
     + [在 `edp` 环境使用](https://github.com/ecomfe/edp-provider-rider)
-    + [在 `connect`/`express` 环境使用](./docs/connect.md)
-+ [API](./docs/api.md)
-+ [代码风格](./docs/code-style.md)
-+ [常见问题](./docs/faq.md)
-+ [DEMO与单元测试](./docs/demo-and-ut.md)
+    + [在 `connect`/`express` 环境使用](./doc/connect.md)
++ [API](./doc/api.md)
++ [代码风格](./doc/code-style.md)
++ [常见问题](./doc/faq.md)
++ [DEMO与单元测试](./doc/demo-and-ut.md)
