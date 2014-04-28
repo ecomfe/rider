@@ -21,7 +21,7 @@ $ node demo/server.js
 
 访问网址：
 
-    http://localhost:8848
+    http://localhost:8888
 
 ## 测试用例
 

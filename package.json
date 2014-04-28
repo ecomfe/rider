@@ -1,26 +1,23 @@
 {
-  "name": "rider",
-  "version": "0.3.2",
-  "description": "Rider is a CSS library to focus on Mobile Web, build on top of Stylus.",
-  "maintainers": [
-    {
-      "name": "Firede",
-      "email": "firede@firede.us"
-    }
-  ],
-  "devDependencies": {
-    "autoprefixer": "~1.1.20140410",
-    "stylus": "~0.43.1",
-    "express": "~3.5.1",
-    "ejs": "~1.0.0",
-    "mocha": "~1.18.2",
-    "should": "~3.1.4"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "main": "./lib/rider.js",
-  "license": "MIT",
-  "repository": "https://github.com/ecomfe/rider.git",
-  "bugs": "https://github.com/ecomfe/rider/issues"
+    "name": "rider",
+    "version": "0.3.3",
+    "description": "Rider is a CSS library to focus on Mobile Web, build on top of Stylus.",
+    "maintainers": [
+        { "name": "Firede", "email": "firede@firede.us" }
+    ],
+    "devDependencies": {
+        "autoprefixer": "~1.1.20140410",
+        "stylus": "~0.44.0",
+        "express": "~4.1.1",
+        "ejs": "~1.0.0",
+        "mocha": "~1.18.2",
+        "should": "~3.3.1"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "main": "./lib/rider.js",
+    "license": "MIT",
+    "repository": "https://github.com/ecomfe/rider.git",
+    "bugs": "https://github.com/ecomfe/rider/issues"
 }
