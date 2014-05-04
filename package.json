@@ -6,7 +6,7 @@
         { "name": "Firede", "email": "firede@firede.us" }
     ],
     "devDependencies": {
-        "autoprefixer": "~1.1.20140410",
+        "autoprefixer": "~1.1.20140429",
         "stylus": "~0.44.0",
         "express": "~4.1.1",
         "ejs": "~1.0.0",
