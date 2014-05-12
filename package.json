@@ -6,9 +6,9 @@
         { "name": "Firede", "email": "firede@firede.us" }
     ],
     "devDependencies": {
-        "autoprefixer": "~1.1.20140429",
-        "stylus": "~0.44.0",
-        "express": "~4.1.1",
+        "autoprefixer": "~1.1.20140510",
+        "stylus": "~0.45.0",
+        "express": "~4.2.0",
         "ejs": "~1.0.0",
         "mocha": "~1.18.2",
         "should": "~3.3.1"
