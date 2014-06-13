@@ -32,7 +32,7 @@ breakpoint()
             $max-value = $arg[1]
 
             if unit($min-value) == ''
-                $min-value = ($-breakpoint-slice[$min-value - 1] || 0) unless $min-value == 0
+                $min-value = ($-breakpoint-slice[$min-value - 1] + 1 || 0) unless $min-value == 0
 
             if unit($max-value) == ''
                 if $max-value < length($-breakpoint-slice)
