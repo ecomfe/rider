@@ -621,12 +621,14 @@ css:
 在实现 **响应式布局** 时，可以按照屏幕宽度分为几个范围，这几个范围用数字来表明：
 
     Breakpoint: 0                 400px     600px     800px       1050px
-                ├───────────────────┼─────────┼──────────┼───────────┼─────────>
+                ├───────────────────┼─────────┼──────────┼───────────┼────────>
     切片 #:               1              2          3          4          5
 
 这样可以使用 `切片` 编号直接指定样式应用范围。
 
 范围分组根据 `$-breakpoint-slice` 的配置决定。
+
+为确保边界值正常，当使用切片定义 `min-width` 时，会自动加 `1px`，不使用切片时不做处理。
 
 这种思路来自 [breakpoint-slicer](https://github.com/lolmaus/breakpoint-slicer)。
 
@@ -661,7 +663,7 @@ css:
 限定低于目标尺寸或 **切片** 边界值。
 
     Breakpoint: 0                 400px     600px     800px       1050px
-                ├───────────────────┼─────────┼──────────┼───────────┼─────────>
+                ├───────────────────┼─────────┼──────────┼───────────┼────────>
     切片 #:               1              2         3           4          5
                 ·                   ·         · below(3) ·           ·
                 <────────────────────────────────────────┤
@@ -694,10 +696,10 @@ css:
 限定高于目标尺寸或 **切片** 边界值。
 
     Breakpoint: 0                 400px     600px     800px       1050px
-                ├───────────────────┼─────────┼──────────┼───────────┼─────────>
+                ├───────────────────┼─────────┼──────────┼───────────┼────────>
     切片 #:               1              2         3           4          5
                 ·                   ·         · above(3) ·           ·
-                                              ├────────────────────────────────>
+                                              ├───────────────────────────────>
 
 `value` 带单位时为具体的值，不带单位时根据 **切片** 边界值配置。
 
@@ -714,7 +716,7 @@ stylus:
 css:
 
 ```css
-@media (min-width: 600px) {
+@media (min-width: 601px) {
     .test {
         foo: bar;
     }
@@ -726,7 +728,7 @@ css:
 限定指定 **切片** 范围。`value` 为切片编号。
 
     Breakpoint: 0                 400px     600px     800px       1050px
-                ├───────────────────┼─────────┼──────────┼───────────┼─────────>
+                ├───────────────────┼─────────┼──────────┼───────────┼────────>
     切片 #:               1              2         3           4          5
                 ·                   ·         ·   at(3)  ·           ·
                                               ├──────────┤
@@ -744,7 +746,7 @@ stylus:
 css:
 
 ```css
-@media (min-width: 600px) and (max-width: 800px) {
+@media (min-width: 601px) and (max-width: 800px) {
     .test {
         foo: bar;
     }
@@ -756,7 +758,7 @@ css:
 限定目标尺寸或 **切片** 边界值的区间。
 
     Breakpoint: 0                 400px     600px     800px       1050px
-                ├───────────────────┼─────────┼──────────┼───────────┼─────────>
+                ├───────────────────┼─────────┼──────────┼───────────┼────────>
     切片 #:               1              2         3           4          5
                 ·                   ·     between(3)     ·           ·
                                     ├────────────────────┤
@@ -776,7 +778,7 @@ stylus:
 css:
 
 ```css
-@media (min-width: 400px) and (max-width: 800px) {
+@media (min-width: 401px) and (max-width: 800px) {
     .test {
         foo: bar;
     }
@@ -813,12 +815,12 @@ stylus:
 css:
 
 ```css
-@media screen and (orientation: portrait) and (min-width: 400px) and (max-width: 800px) {
+@media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 800px) {
     .test-1 {
         foo: bar;
     }
 }
-@media (min-width: 600px) and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 600px) and (max-width: 800px) and (min-resolution: 125dpi) {
+@media (min-width: 601px) and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 601px) and (max-width: 800px) and (min-resolution: 125dpi) {
     .test-2 {
         foo: bar;
     }
