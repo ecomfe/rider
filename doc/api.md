@@ -177,7 +177,7 @@ normalize-form()
 ```haml
 .box
     margin: _ 5px
-    // => margin-right: 5px; padding-left: 5px;
+    // => margin-right: 5px; margin-left: 5px;
 ```
 
 ### border-color: border-top-color border-right-color border-bottom-color border-left-color
