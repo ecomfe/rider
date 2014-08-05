@@ -15,7 +15,7 @@ function compile(str, filePath) {
 }
 
 function prefixer(err, css) {
-    return ap('android >= 2.3', 'ios >= 5', 'ie 10').process(css).css;
+    return ap('Android >= 2.3', 'iOS >= 5', 'ExplorerMobile >= 10').process(css).css;
 }
 
 app.set('views', path.join(__dirname, '/views'));
@@ -36,7 +36,7 @@ app.get('/:page?', function (req, res) {
         res.render(page);
     }
     else {
-        res.send(404);
+        res.status(404).end();
     }
 });
 

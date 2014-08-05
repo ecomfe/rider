@@ -7,7 +7,7 @@
 
 animate($name, $duration = 1s, $fill-mode = both)
     /
-        @require(pathjoin('animate', $name))
+        @require pathjoin('animate', $name)
 
     if mixin != 'root'
         $fill-mode = unquote($fill-mode) if typeof($fill-mode) == 'string'
