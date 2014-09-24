@@ -15,7 +15,11 @@ function compile(str, filePath) {
 }
 
 function prefixer(err, css) {
-    return ap('Android >= 2.3', 'iOS >= 5', 'ExplorerMobile >= 10').process(css).css;
+    return ap(
+        {
+            browsers: ['Android >= 2.3', 'iOS >= 5', 'ExplorerMobile >= 10']
+        }
+    ).process(css).css;
 }
 
 app.set('views', path.join(__dirname, '/views'));
