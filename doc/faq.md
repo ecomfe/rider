@@ -1,8 +1,11 @@
-# 常见问题
+常见问题
+===
 
-## `@require` 和 `@import` 用哪个？
+## @require 和 @import 用哪个？
 
-尽量使用 `@require`。`@require` 多次引入同一文件时只会执行一次，`@import` 每次都会执行。
+根据需求而定，通常使用 `@require`。
+
+`@require` 多次引入同一文件时只会执行一次，`@import` 每次都会执行。
 
 ## RIA项目如何组织各视图样式？
 
