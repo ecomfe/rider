@@ -1,7 +1,7 @@
 var express = require('express');
 var stylus = require('stylus');
 var rider = require('../lib/rider');
-var ap = require('autoprefixer');
+var ap = require('autoprefixer-core');
 var path = require('path');
 
 var app = express();
