@@ -41,10 +41,10 @@ breakpoint()
                     // 0 means larger than largest slice
                     $max-value = 0
 
-            if $min-value > 0
+            if $min-value > 1
                 push($mq-array, '(min-width: %s)' % $min-value)
 
-            if $max-value > 0
+            if $max-value > 1
                 push($mq-array, '(max-width: %s)' % $max-value)
 
         else if $arg-type == 'string' && $arg in ('portrait' 'landscape')

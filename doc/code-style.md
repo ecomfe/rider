@@ -1,4 +1,5 @@
-# 代码风格
+代码风格
+===
 
 `stylus` 自由度很高，代码风格很容易差异化。为了团队协作与代码的可读性，请在开发时遵守本约定。
 
@@ -43,4 +44,3 @@ initialize()
 // 当 Mixin 应用于 CSS root 时，加括号执行
 font-face('rider-icon', 'font/rider-icon')
 ```
-

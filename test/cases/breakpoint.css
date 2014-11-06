@@ -98,4 +98,8 @@
     foo: bar;
   }
 }
-
+@media (max-width: 400px) {
+  .test-21 {
+    display: block;
+  }
+}

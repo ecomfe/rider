@@ -1,4 +1,5 @@
-# DEMO与单元测试
+DEMO与单元测试
+===
 
 发布版是不包含 `demo` 和 `test` 的，所以需要先将仓库 clone 到本地：
 
@@ -11,6 +12,7 @@ $ git clone https://github.com/ecomfe/rider.git
 ```shell
 $ npm install
 ```
+
 ## DEMO
 
 在仓库根目录执行：
