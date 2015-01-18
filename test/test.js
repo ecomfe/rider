@@ -1,6 +1,5 @@
 /**
- * rider test
- * 
+ * @file rider test
  * @author firede(firede@firede.us)
  */
 
@@ -25,7 +24,7 @@ describe('rider test', function () {
         var name = test.replace(/[-.]/g, ' ');
 
         it(name, function () {
-            var stylPath = path.join(__dirname, 'cases', test +'.styl');
+            var stylPath = path.join(__dirname, 'cases', test + '.styl');
             var cssPath = path.join(__dirname, 'cases', test + '.css');
             var styl = fs.readFileSync(stylPath, 'utf8').replace(/\r/g, '');
             var css = fs.readFileSync(cssPath, 'utf8').replace(/\r/g, '').trim();
@@ -36,7 +35,9 @@ describe('rider test', function () {
                     .use(rider());
 
             style.render(function (err, actual) {
-                if (err) throw err;
+                if (err) {
+                    throw err;
+                }
                 actual.trim().should.equal(css);
             });
         });

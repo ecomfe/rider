@@ -1,3 +1,8 @@
+/**
+ * @file rider demo
+ * @author firede(firede@firede.us)
+ */
+
 var express = require('express');
 var stylus = require('stylus');
 var rider = require('../lib/rider');
