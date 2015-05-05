@@ -1,13 +1,16 @@
 {
     "name": "rider",
-    "version": "0.4.4",
+    "version": "2.0.0-alpha.1",
     "description": "Rider is a CSS library to focus on Mobile Web, build on top of Stylus.",
     "maintainers": [
-        { "name": "Firede", "email": "firede@firede.us" }
+        {
+            "name": "Firede",
+            "email": "firede@firede.us"
+        }
     ],
     "devDependencies": {
         "autoprefixer-core": "~5.1.11",
-        "stylus": "~0.50.0",
+        "stylus": "~0.51.1",
         "express": "~4.12.3",
         "ejs": "~2.3.1",
         "mocha": "~2.2.4",
