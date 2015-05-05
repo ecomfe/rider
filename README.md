@@ -1,4 +1,4 @@
-rider [![NPM version](https://img.shields.io/npm/v/rider.svg?style=flat-square)](https://npmjs.org/package/rider) [![Build Status](https://img.shields.io/travis/ecomfe/rider.svg?style=flat-square)](https://travis-ci.org/ecomfe/rider) ![License](https://img.shields.io/npm/l/rider.svg?style=flat-square) ![EFE Mobile Team](https://img.shields.io/badge/EFE-Mobile_Team-blue.svg?style=flat-square)
+rider [![NPM version](https://img.shields.io/npm/v/rider.svg?style=flat-square)](https://npmjs.org/package/rider) [![Build Status](https://img.shields.io/travis/ecomfe/rider.svg?style=flat-square)](https://travis-ci.org/ecomfe/rider) [![License](https://img.shields.io/npm/l/rider.svg?style=flat-square)](./LICENSE) [![EFE Mobile Team](https://img.shields.io/badge/EFE-Mobile_Team-blue.svg?style=flat-square)](http://efe.baidu.com)
 ===
 
 `rider` 是一个基于 [`stylus`](https://github.com/LearnBoost/stylus)、专注于 **移动 Web** 的 CSS 样式库。

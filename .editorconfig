@@ -1,5 +1,4 @@
-# 本文件用于在不同的编辑器中统一代码风格
-# 请为你的编辑器安装 EditorConfig 插件
+# This file is for unifying the coding style for different editors and IDEs
 # editorconfig.org
 
 root = true
