@@ -10,11 +10,10 @@
     ],
     "devDependencies": {
         "autoprefixer-core": "~5.1.11",
-        "stylus": "~0.51.1",
-        "express": "~4.12.3",
         "ejs": "~2.3.1",
+        "express": "~4.12.3",
         "mocha": "~2.2.4",
-        "should": "~6.0.1"
+        "stylus": "~0.51.1"
     },
     "scripts": {
         "test": "mocha"

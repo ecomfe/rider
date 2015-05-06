@@ -7,7 +7,7 @@ var stylus = require('stylus');
 var fs = require('fs');
 var path = require('path');
 var rider = require('../lib/rider');
-var should = require('should');
+var assert = require('assert');
 
 var casesPath = path.join(__dirname, './cases');
 
@@ -38,7 +38,7 @@ describe('rider test', function () {
                 if (err) {
                     throw err;
                 }
-                actual.trim().should.equal(css);
+                assert.equal(actual.trim(), css);
             });
         });
     });
