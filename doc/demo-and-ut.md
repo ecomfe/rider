@@ -18,7 +18,7 @@ $ npm install
 在仓库根目录执行：
 
 ```shell
-$ node demo/server.js
+$ npm run demo
 ```
 
 访问网址：
