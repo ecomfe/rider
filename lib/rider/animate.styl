@@ -1,7 +1,7 @@
 // animate
 //
 // @author  firede(firede@firede.us)
-// @desc    ported from Animate.css v3
+// @desc    ported from Animate.css v3.2.6
 // @see     http://daneden.github.io/animate.css
 
 
@@ -18,7 +18,11 @@ animate($name, $duration = 1s, $fill-mode = both)
         animation-fill-mode: $fill-mode
 
         // process special animation
-        if $name in (flip flipInX flipInY flipOutX flipOutY)
+        if $name == bounce
+            transform-origin: center bottom
+        if $anme == flip
+            backface-visibility: visible
+        if $name in (flipInX flipInY flipOutX flipOutY)
             backface-visibility: visible !important
         if $name == lightSpeedIn
             animation-timing-function: ease-out
@@ -26,4 +30,3 @@ animate($name, $duration = 1s, $fill-mode = both)
             animation-timing-function: ease-in
         if $name == swing
             transform-origin: top center
-
