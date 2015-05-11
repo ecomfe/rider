@@ -1,5 +1,5 @@
 // shape
-// 
+//
 // @author  firede(firede@firede.us)
 
 
@@ -40,3 +40,16 @@ triangle($direction = top, $size = 10px, $color = #333)
         border-bottom: $size solid transparent
         border-left: $size solid $color
 
+// circle
+circle($values...)
+    if length($values) == 1
+        $values-unit = unit($values) == '' ? 'px' : unit($values)
+
+        border-radius: unit($values, $values-unit)
+        size: $values
+    else
+        $horizontal-unit = unit($values[0]) == '' ? 'px' : unit($values[0])
+        $vertical-unit = unit($values[1]) == '' ? 'px' : unit($values[1])
+
+        border-radius: unit($values[0], $horizontal-unit) \/ unit($values[1], $vertical-unit)
+        size: $values[0] $values[1]
