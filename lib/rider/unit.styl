@@ -1,5 +1,5 @@
 // unit
-// 
+//
 // @author  firede(firede@firede.us)
 // @desc    unit conversion functions
 
@@ -10,7 +10,7 @@
 // default unit is `px`
 rem($value)
     if unit($value) == 'px' || unit($value) == ''
-        $value = round($value / $-base-font-size, 3)
+        $value = round($value / $-base-font-size, $-unit-decimal-places)
 
     unit($value, 'rem')
 
@@ -18,9 +18,9 @@ rem($value)
 // convert to em unit
 em($value, $upper-value = $-base-font-size)
     if unit($value) == 'px' || unit($value) == ''
-        $value = round($value / px($upper-value), 3)
+        $value = round($value / px($upper-value), $-unit-decimal-places)
     else if unit($value) == 'rem'
-        $value = round(px($value) / px($upper-value), 3)
+        $value = round(px($value) / px($upper-value), $-unit-decimal-places)
 
     unit($value, 'em')
 
@@ -28,6 +28,6 @@ em($value, $upper-value = $-base-font-size)
 // convert to px unit
 px($value)
     if unit($value) == 'rem'
-        $value = round($value * $-base-font-size, 3)
+        $value = round($value * $-base-font-size, $-unit-decimal-places)
 
     unit($value, 'px')

@@ -34,4 +34,17 @@
     foo: px(1rem)
     foo: px(0.5rem)
 
-// @todo: need test case when default font size is changed.
+.test-decimal-places-default
+    foo: rem(5.5)
+
+// change default decimal places
+$-unit-decimal-places = 5
+
+.test-decimal-places-custom
+    foo: rem(5.5)
+
+// change default font size
+$-base-font-size = 10px
+
+.test-change-font-size
+    foo: rem(15)
