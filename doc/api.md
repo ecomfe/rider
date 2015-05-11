@@ -9,7 +9,7 @@ API
 ---|---|---
 `$-base-font-size` | `16px` | 用于设置默认文字大小、常用单位的转换
 `$-base-font-family` | `'Helvetica Neue', sans-serif` | 默认字体
-`$-prevent-user-select` | `false` | 屏蔽用户选择文本的能力，通常用在 Hybrid App 场景
+`$-code-font-family` | `Menlo, Consolas, monospace` | 代码的默认字体
 `$-prevent-text-size-adjust` | `true` | 屏蔽屏幕翻转时，浏览器缩放字体的行为
 `$-prevent-tap-highlight` | `true` | 屏蔽 `a` 标签的点击高亮效果
 `$-image-dppx` | `2` | 图片每像素的点数，用于支持 retina 设备

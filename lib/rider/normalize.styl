@@ -7,15 +7,25 @@
 
 normalize()
 
-    // 1. Set default font family to sans-serif.
+    // 1. Set default font family.
     // 2. Prevent iOS and IE text size adjust after device orientation change,
     //    without disabling user zoom.
 
     html
-        font-family: sans-serif // 1
-        -ms-text-size-adjust: 100% // 2
-        -webkit-text-size-adjust: 100% // 2
+        font-size: unit($-base-font-size / 16 * 100, '%')
+        font-family: $-base-font-family // 1
 
+        if $-prevent-text-size-adjust == true // 2
+            -ms-text-size-adjust: 100%
+            -webkit-text-size-adjust: 100%
+
+
+    // tap highlight color
+    if $-prevent-tap-highlight == true
+        a,
+        nav
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+            -webkit-tap-highlight-color: transparent // for some Android
 
     // Remove default margin.
 
@@ -193,7 +203,7 @@ normalize()
     kbd,
     pre,
     samp
-        font-family: monospace, monospace
+        font-family: $-code-font-family
         font-size: 1em
 
 
