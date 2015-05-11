@@ -554,13 +554,16 @@ css:
 
     bounce bounceIn bounceInDown bounceInLeft bounceInRight bounceInUp
     bounceOut bounceOutDown bounceOutLeft bounceOutRight bounceOutUp
-    fadeIn fadeInDown fadeInLeft fadeInRight fadeInUp fadeOut fadeOutDown
-    fadeOutLeft fadeOutRight fadeOutUp flash flip flipInX flipInY
-    flipOutX flipOutY hinge lightSpeedIn lightSpeedOut pulse rollIn rollOut
-    rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight
-    rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft
-    rotateOutUpRight rubberBand shake slideInDown slideInLeft slideInRight
-    slideOutLeft slideOutRight slideOutUp swing tada wobble
+    fadeIn fadeInDown fadeInDownBig fadeInLeft fadeInLeftBig fadeInRight
+    fadeInRightBig fadeInUp fadeInUpBig fadeOut fadeOutDown fadeOutDownBig
+    fadeOutLeft fadeOutLeftBig fadeOutRight fadeOutRightBig fadeOutUp fadeOutUpBig
+    flash flip flipInX flipInY flipOutX flipOutY hinge lightSpeedIn lightSpeedOut
+    pulse rollIn rollOut rotateIn rotateInDownLeft rotateInDownRight
+    rotateInUpLeft rotateInUpRight rotateOut rotateOutDownLeft rotateOutDownRight
+    rotateOutUpLeft rotateOutUpRight rubberBand shake slideInDown slideInLeft
+    slideInRight slideOutLeft slideOutRight slideOutUp swing tada wobble
+    zoomIn zoomInDown zoomInLeft zoomInRight zoomInUp
+    zoomOut zoomOutDown zoomOutLeft zoomOutRight zoomOutUp
 
 动画效果可以参考 [Animate.css](http://daneden.github.io/animate.css/)
 
