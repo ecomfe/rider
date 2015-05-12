@@ -14,7 +14,7 @@ API
 `$-prevent-tap-highlight` | `true` | 屏蔽 `a` 标签的点击高亮效果
 `$-image-dppx` | `2` | 图片每像素的点数，用于支持 retina 设备
 `$-breakpoint-slice` | `0 400px 600px 800px 1050px` | 响应式Web设计屏幕尺寸的划分
-`$-unit-decimal-places` | `3` | 单位转换功能保留的小数位数
+`$-unit-precision` | `5` | 单位精度，转换后保留的小数位数
 
 
 ## 样式初始化
