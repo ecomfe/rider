@@ -30,10 +30,10 @@
   foo: 8px;
 }
 .test-decimal-places-default {
-  foo: 0.344rem;
+  foo: 0.34375rem;
 }
 .test-decimal-places-custom {
-  foo: 0.34375rem;
+  foo: 0.344rem;
 }
 .test-change-font-size {
   foo: 1.5rem;
