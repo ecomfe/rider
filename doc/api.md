@@ -410,7 +410,7 @@ css:
 }
 ```
 
-### font-face: font-family, font-path, version-suffix
+### font-face: font-family, font-path
 
 快速引入字体。
 
@@ -418,20 +418,19 @@ css:
 
 + `font-family` 字体名
 + `font-path` 字体路径，是字体去掉后缀名之后的部分
-+ `version-suffix` `(可选)` 版本后缀，用来更新字体版本
 
 **使用方法**
 
 stylus:
 
 ```haml
-font-face('rider-icon', 'font/rider-icon', '88')
+font-face('rider-icon', 'font/rider-icon')
 ```
 
 ```css
 @font-face {
     font-family: 'rider-icon';
-    src: url("font/rider-icon.woff?88") format('woff'), url("font/rider-icon.ttf?88") format('truetype');
+    src: url("font/rider-icon.woff") format('woff'), url("font/rider-icon.ttf?88") format('truetype');
     font-weight: normal;
     font-style: normal;
 }

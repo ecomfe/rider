@@ -38,14 +38,49 @@ clearfix()
 
 // font face
 // iOS/Android used ttf, Mobile IE 10 used woff.
-font-face($font-family, $font-path, $version-suffix = '')
-    $version-suffix = '?' + $version-suffix if $version-suffix != ''
-    $ttf-path = $font-path + '.ttf' + $version-suffix
-    $woff-path = $font-path + '.woff' + $version-suffix
+font-face($font-family, $font-path)
+
+    // 字体类型与对应的format,顺序排列
+    $font-formats = {
+        'eot': 'embedded-opentype',
+        'woff': 'woff',
+        'woff2': 'woff2',
+        'ttf': 'truetype',
+        'svg': 'svg'
+    }
+
+    $usable-types = ()
+    $src-array = ()
+    $font-files = {}
+
+    // 取出本地可用的字体
+    for $type in keys($font-formats)
+        $font-files[$type] = $font-path + '.' + $type
+
+        if is-found($font-files[$type])
+            push($usable-types, $type)
+
+    // 无任何可用字体则报错
+    if length($usable-types) == 0
+        error('Web fonts `' + $font-family + '` not exists!');
+
+    // 合并字体src
+    for $type in $usable-types
+        if $type == 'eot'
+            $src-url = $font-files[$type] + '?#iefix'
+        else if $type == 'svg'
+            $src-url = $font-files[$type] + '#' + $font-family
+        else
+            $src-url = $font-files[$type]
+        $src-str = s('%s format(%s)', url($src-url), $font-formats[$type])
+        push($src-array, $src-str)
+
+    $str = join(', ', $src-array)
 
     @font-face
         font-family: $font-family
-        src: url($woff-path) format('woff'), url($ttf-path) format('truetype')
+        if 'eot' in $usable-types
+            src: url($font-files['eot'])
+        src: unquote($str)
         font-weight: normal
         font-style: normal
-
