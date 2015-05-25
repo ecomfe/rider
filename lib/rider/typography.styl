@@ -40,6 +40,9 @@ clearfix()
 // iOS/Android used ttf, Mobile IE 10 used woff.
 font-face($font-family, $font-path)
 
+    if is-url($font-path)
+        error('Only support local $font-path, please using `@font-face` instead.')
+
     // 字体类型与对应的format,顺序排列
     $font-formats = {
         'eot': 'embedded-opentype',
