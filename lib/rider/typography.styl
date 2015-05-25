@@ -57,7 +57,7 @@ font-face($font-family, $font-path)
     for $type in keys($font-formats)
         $font-files[$type] = $font-path + '.' + $type
 
-        if is-found($font-files[$type])
+        if file-exists($font-files[$type])
             push($usable-types, $type)
 
     // 无任何可用字体则报错
