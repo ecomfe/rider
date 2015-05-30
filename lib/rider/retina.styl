@@ -1,0 +1,16 @@
+// retina
+//
+// @author  firede(firede@firede.us)
+// @desc    retina helpers
+
+physical-border-width($args...)
+    $half-args = ()
+    for $arg in $args
+        if $arg == '_'
+            push($half-args, $arg)
+        else
+            push($half-args, ($arg / 2))
+
+    border-width: $args
+    +retina()
+        border-width: $half-args

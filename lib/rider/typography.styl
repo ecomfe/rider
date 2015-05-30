@@ -87,17 +87,3 @@ font-face($font-family, $font-path)
         src: unquote($str)
         font-weight: normal
         font-style: normal
-
-
-// hairline border support
-physical-border-width($args...)
-    $half-args = ()
-    for $arg in $args
-        if $arg == '_'
-            push($half-args, $arg)
-        else
-            push($half-args, ($arg / 2))
-
-    border-width: $args
-    +retina()
-        border-width: $half-args
