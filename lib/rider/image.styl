@@ -45,6 +45,10 @@ ir($src, $x = null, $y = null, $width = null, $height = null)
 
     background-position-x: $x if $x != null && $y == null
     background-position-y: $y if $x == null && $y != null
-    background-position: $x $y if $x != null && $y != null
+    if $x != null && $y != null
+        if $x == $y
+            background-position: $x
+        else
+            background-position: $x $y
 
     bg($src, $width, $height)

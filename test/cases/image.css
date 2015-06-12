@@ -102,3 +102,17 @@
     background-image: url("../../test/cases/img/rider@2x.png");
   }
 }
+.ir-6 {
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+  background-position: 0;
+  background-image: url("../../test/cases/img/rider.png");
+  background-size: 100px 200px;
+  background-repeat: no-repeat;
+}
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  .ir-6 {
+    background-image: url("../../test/cases/img/rider@2x.png");
+  }
+}
