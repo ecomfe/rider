@@ -12,5 +12,7 @@ physical-border-width($args...)
             push($half-args, ($arg / 2))
 
     border-width: $args
-    +retina()
+
+    // 只有 iOS 8+ 支持 0.5px 边框，不需要做 dpi 兼容
+    @media (min-resolution: 2dppx)
         border-width: $half-args

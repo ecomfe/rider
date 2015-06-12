@@ -1,38 +1,3 @@
-@media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 125dpi) {
-  .test-1 {
-    foo: bar;
-  }
-}
-@media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 125dpi) {
-  .test-2 {
-    foo: bar;
-  }
-}
-@media screen {
-  .test-3 {
-    foo: bar;
-  }
-}
-@media screen and (orientation: portrait) {
-  .test-4 {
-    foo: bar;
-  }
-}
-@media screen and (orientation: portrait) {
-  .test-5 {
-    foo: bar;
-  }
-}
-@media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 800px) {
-  .test-6 {
-    foo: bar;
-  }
-}
-@media (orientation: portrait) {
-  .test-7 {
-    foo: bar;
-  }
-}
 @media (min-width: 401px) and (max-width: 800px) {
   .test-8 {
     foo: bar;
@@ -58,26 +23,6 @@
     foo: bar;
   }
 }
-@media all and (min-width: 601px) and (max-width: 800px) {
-  .test-13 {
-    foo: bar;
-  }
-}
-@media print and (max-width: 800px) {
-  .test-14 {
-    foo: bar;
-  }
-}
-@media screen and (min-width: 601px) {
-  .test-15 {
-    foo: bar;
-  }
-}
-@media screen and (min-width: 601px) and (max-width: 1050px) {
-  .test-16 {
-    foo: bar;
-  }
-}
 @media (min-width: 601px) and (max-width: 900px) {
   .test-17 {
     foo: bar;
@@ -90,11 +35,6 @@
 }
 @media (min-width: 40em) {
   .test-19 {
-    foo: bar;
-  }
-}
-@media (min-width: 601px) and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 601px) and (max-width: 800px) and (min-resolution: 125dpi) {
-  .test-20 {
     foo: bar;
   }
 }
