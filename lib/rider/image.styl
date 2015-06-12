@@ -8,6 +8,8 @@
 @require 'retina'
 @require 'typography'
 
+// 设置背景图片
+// 自动查找并设置为 retina 设备准备的高清图片
 bg($src, $width = null, $height = null)
 
     if not file-exists($src)
@@ -35,7 +37,8 @@ bg($src, $width = null, $height = null)
                 +retina($computed-dppx)
                     background-image: url($computed-src)
 
-
+// 图片替换
+// 隐藏文字并设置背景图片，可指定背景图片坐标
 ir($src, $x = null, $y = null, $width = null, $height = null)
     hide-text()
 
@@ -44,14 +47,3 @@ ir($src, $x = null, $y = null, $width = null, $height = null)
     background-position: $x $y if $x != null && $y != null
 
     bg($src, $width, $height)
-// // image replace
-// // hide text and set background image
-// ir($path, $x = 0, $y = 0, $width = auto, $height = auto, $dppx = 2)
-//     bg($path, $width, $height, $dppx)
-
-//     if $x != 0 && $y == 0
-//         $y = null
-//     if $x != 0
-//         background-position: $x $y
-
-//     hide-text()
