@@ -22,6 +22,7 @@ bg($src, $width = null, $height = null)
 
     background-image: url($src)
     background-size: $width $height
+    background-repeat: no-repeat
 
     for $dppx, $index in $-image-dppx-range
         // 忽略 dppx 为 1 的情况
