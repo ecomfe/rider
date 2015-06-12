@@ -23,11 +23,16 @@ $-prevent-text-size-adjust ?= true
 // 消除 tap highlight 颜色
 $-prevent-tap-highlight ?= true
 
-// 图片dppx范围
-$-image-dppx-range ?= 1..3
+// 图片的retina版本探测范围
+// 顺序按从小到大排列
+$-image-dppx-range ?= (2 3)
 
 // 图片dppx分隔符
-$-image-dppx-separator = '@'
+$-image-dppx-separator ?= '@'
+
+// 图片质量优先模式
+// 启用时将为低 0.5dppx 以内的设备，使用质量更高的图片
+$-image-dppx-quality-first ?= false
 
 // breakpoint 的切片分段
 // 默认值: 0 400px 600px 800px 1050px

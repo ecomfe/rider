@@ -1,41 +1,57 @@
-// image
+// 图片
 //
 // @author  firede(firede@firede.us)
 // @desc    image helpers
 
 
 @require 'setting'
+@require 'retina'
 @require 'typography'
 
+bg($src, $width = null, $height = null)
 
-// set background image
-bg($path, $width = auto, $height = auto, $dppx = $-image-dppx)
-    warn('$path should be a string.') if typeof($path) != 'string'
-    background: url($path) no-repeat
+    if not file-exists($src)
+        error('$src 必须为本地已存在的图片路径：' + $src)
 
-    if $width in (cover contain) and $height == auto
-        $height = null
-    else if $width == auto && $height == auto
-        $img-size = image-size($path, 0)
-        if $img-size[0] != 0
-            $width = ($img-size[0] / $dppx)
-            $height = ($img-size[1] / $dppx)
-        else
-            $width = null
-            $height = null
-            warn('$width and $height get failed, the values has been set to `auto`.')
+    // 获取图片尺寸
+    $img-size = image-size($src)
+    $width = $img-size[0] if $width == null
+    $height = $img-size[1] if $height == null
 
-    if $width != null || $height != null
-        background-size: $width $height
+    background-image: url($src)
+    background-size: $width $height
 
-// image replace
-// hide text and set background image
-ir($path, $x = 0, $y = 0, $width = auto, $height = auto, $dppx = $-image-dppx)
-    bg($path, $width, $height, $dppx)
+    for $dppx, $index in $-image-dppx-range
+        // 忽略 dppx 为 1 的情况
+        if $dppx != 1
+            $computed-src = get-retina-src($src, $dppx, $-image-dppx-separator)
+            if file-exists($computed-src)
+                // 质量优先模式
+                if $-image-dppx-quality-first && $dppx > 1.5
+                    $computed-dppx = $dppx - 0.5
+                else
+                    $computed-dppx = $dppx
 
-    if $x != 0 && $y == 0
-        $y = null
-    if $x != 0
-        background-position: $x $y
+                +retina($computed-dppx)
+                    background-image: url($computed-src)
 
+
+ir($src, $x = null, $y = null, $width = null, $height = null)
     hide-text()
+
+    background-position-x: $x if $x != null && $y == null
+    background-position-y: $y if $x == null && $y != null
+    background-position: $x $y if $x != null && $y != null
+
+    bg($src, $width, $height)
+// // image replace
+// // hide text and set background image
+// ir($path, $x = 0, $y = 0, $width = auto, $height = auto, $dppx = 2)
+//     bg($path, $width, $height, $dppx)
+
+//     if $x != 0 && $y == 0
+//         $y = null
+//     if $x != 0
+//         background-position: $x $y
+
+//     hide-text()
