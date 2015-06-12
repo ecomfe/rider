@@ -3,6 +3,7 @@
 // @author  firede(firede@firede.us)
 // @desc    retina helpers
 
+// 物理边框尺寸
 physical-border-width($args...)
     $half-args = ()
     for $arg in $args
@@ -16,3 +17,11 @@ physical-border-width($args...)
     // 只有 iOS 8+ 支持 0.5px 边框，不需要做 dpi 兼容
     @media (min-resolution: 2dppx)
         border-width: $half-args
+
+
+// 限定 retina 模式的 block mixin
+// 不区分 dppx 具体倍数时，取 1.5dppx 作为一般意义上的 retina 设备
+retina($dppx = 1.5)
+    $mq-string = '(min-resolution: %sdppx), (min-resolution: %sdpi)' % ($dppx ($dppx * 96))
+    @media $mq-string
+        {block}

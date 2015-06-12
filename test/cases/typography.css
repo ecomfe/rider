@@ -34,19 +34,3 @@
   font-weight: normal;
   font-style: normal;
 }
-.physical-border-1 {
-  border-width: 1px;
-}
-@media (min-resolution: 2dppx) {
-  .physical-border-1 {
-    border-width: 0.5px;
-  }
-}
-.physical-border-2 {
-  border-bottom-width: 1px;
-}
-@media (min-resolution: 2dppx) {
-  .physical-border-2 {
-    border-bottom-width: 0.5px;
-  }
-}

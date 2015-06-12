@@ -1,0 +1,18 @@
+.physical-border-1
+    physical-border-width: 1px
+
+.physical-border-2
+    physical-border-width: _ _ 1px
+
++retina(2)
+    .retina-1
+        foo: bar
+
+.retina-2
+    +retina()
+        foo: baz
+
++retina()
+    +at(3)
+        .retina-with-breakpoint
+            foo: bar
