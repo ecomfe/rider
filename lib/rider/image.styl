@@ -8,6 +8,7 @@
 @require 'retina'
 @require 'typography'
 
+
 // 设置背景图片
 // 自动查找并设置为 retina 设备准备的高清图片
 bg($src, $width = null, $height = null)
@@ -38,6 +39,7 @@ bg($src, $width = null, $height = null)
                 +retina($computed-dppx)
                     background-image: url($computed-src)
 
+
 // 图片替换
 // 隐藏文字并设置背景图片，可指定背景图片坐标
 ir($src, $x = null, $y = null, $width = null, $height = null)
@@ -52,3 +54,34 @@ ir($src, $x = null, $y = null, $width = null, $height = null)
             background-position: $x $y
 
     bg($src, $width, $height)
+
+
+// 使用若干 dppx 倍数的图片
+// 若换算后的图片尺寸不为整数，则舍弃小数部分
+bg-dppx($dppx, $src, $width = null, $height = null)
+
+    if unit($dppx) != ''
+        error('$dppx 的值必须是一个代表倍数的数字')
+
+    if not file-exists($src)
+        error('$src 必须为本地已存在的图片路径：' + $src)
+
+    // 获取图片尺寸
+    $img-size = image-size($src)
+    $width = floor($img-size[0] / $dppx) if $width == null
+    $height = floor($img-size[1] / $dppx) if $height == null
+
+    background-image: url($src)
+    background-size: $width $height
+    background-repeat: no-repeat
+
+
+// 使用 2dppx 的图片作为背景
+bg2x($src, $width = null, $height = null)
+    bg-dppx(2, $src, $width, $height)
+
+
+// 使用 3dppx 的图片作为背景
+bg3x($src, $width = null, $height = null)
+    bg-dppx(3, $src, $width, $height)
+
