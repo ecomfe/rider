@@ -57,3 +57,18 @@
   border-bottom: 5px solid transparent;
   border-left: 5px solid #369;
 }
+.test-circle-1 {
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+}
+.test-circle-2 {
+  border-radius: 20px/40px;
+  width: 20px;
+  height: 40px;
+}
+.test-circle-3 {
+  border-radius: 5rem/3rem;
+  width: 5rem;
+  height: 3rem;
+}
