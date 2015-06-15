@@ -1,9 +1,9 @@
-// typography
+// 排版
 //
-// @author  firede(firede@firede.us)
+// @author firede(firede@firede.us)
 
 
-// hide text
+// 隐藏文字
 // @see http://goo.gl/EglZN
 hide-text()
     color: transparent
@@ -11,8 +11,8 @@ hide-text()
     text-shadow: none
 
 
-// ellipsis
-// support multi line (webkit only)
+// 省略
+// 多行截断并省略，仅在 webkit 下支持
 ellipsis($line = 1)
     overflow: hidden
     text-overflow: ellipsis
@@ -25,7 +25,7 @@ ellipsis($line = 1)
         -webkit-box-orient: vertical
 
 
-// clearfix
+// 清除浮动
 // @see http://h5bp.com/q
 clearfix()
     &:after,
@@ -36,12 +36,12 @@ clearfix()
         clear: both
 
 
-// font face
-// iOS/Android used ttf, Mobile IE 10 used woff.
+// 字体
+// 根据存在的字体类型，自动生成配置
 font-face($font-family, $font-path)
 
     if is-url($font-path)
-        error('Only support local $font-path, please using `@font-face` instead.')
+        error('$font-path 只支持本地路径，请直接用 @font-face 写远程路径')
 
     // 字体类型与对应的format,顺序排列
     $font-formats = {
@@ -65,7 +65,7 @@ font-face($font-family, $font-path)
 
     // 无任何可用字体则报错
     if length($usable-types) == 0
-        error('Web fonts `' + $font-family + '` not exists!');
+        error('没有找到 `' + $font-family + '` 的本地字体文件');
 
     // 合并字体src
     for $type in $usable-types
