@@ -1,4 +1,27 @@
 
+2.0.0 / 2015-06-15
+==================
+
+ * **Breaking Change** 改进 Function：`bg()`, `ir()` [#18](https://github.com/ecomfe/rider/issues/18)
+ * **Breaking Change** 改进 Root Mixin：`font-face()` [#16](https://github.com/ecomfe/rider/issues/16)
+ * **Breaking Change** 改进 Block Mixin：`+breakpoint()`，移除组合能力，迁出 retina 支持 [#19](https://github.com/ecomfe/rider/issues/19)
+ * **Breaking Change** 移除：retina 支持中的浏览器兼容代码 [#17](https://github.com/ecomfe/rider/issues/17)
+ * **Breaking Change** 移除 全局变量：`$-image-dppx`，retina 图片机制已更新
+ * 增加 全局变量：`$-code-font-family` 作为代码段默认字体
+ * 增加 全局变量：`$-image-dppx-range` 作为 retina 图片的探测范围
+ * 增加 全局变量：`$-image-dppx-separator` 作为 retina 图片的分隔符
+ * 增加 全局变量：`$-image-dppx-quality-first` 作为 retina 图片质量优先模式的开关
+ * 增加 全局变量：`$-unit-precision` 作为单位转换的小数点精度控制
+ * 增加 Function：`bg2x()`, `bg3x()`, `bg-dppx()` [#23](https://github.com/ecomfe/rider/issues/23)
+ * 增加 Function：`file-exists()`, `is-url()`, `get-retina-src` [#15](https://github.com/ecomfe/rider/issues/15)
+ * 增加 Mixin：`normalize()` 作为布局初始化的补充 [#8](https://github.com/ecomfe/rider/issues/8)
+ * 增加 Mixin：`physical-border-width()` 解决 retina 设备 1px 边框问题 [#13](https://github.com/ecomfe/rider/issues/13)
+ * 增加 Block Mixin：`+retina()` [#20](https://github.com/ecomfe/rider/issues/20)
+ * 改进 Function：`rem()`, `em()`, `px()` 单位转换定义截取小数点位数 [#4](https://github.com/ecomfe/rider/issues/4)
+ * 改进 Mixin：`animate()` 升级至 animate.css 3.2.6 版 [#5](https://github.com/ecomfe/rider/issues/5)
+ * 改进：测试脚本启用 inline diff [#7](https://github.com/ecomfe/rider/issues/7)
+ * 改进：简化 demo 的支持部分 [#6](https://github.com/ecomfe/rider/issues/6)
+
 0.4.4 / 2014-11-06
 ==================
 
