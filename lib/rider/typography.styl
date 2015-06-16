@@ -38,7 +38,7 @@ clearfix()
 
 // 字体
 // 根据存在的字体类型，自动生成配置
-font-face($font-family, $font-path)
+font-face($font-family, $font-path, $font-weight = normal, $font-style = normal)
 
     if is-url($font-path)
         error('$font-path 只支持本地路径，请直接用 @font-face 写远程路径')
@@ -85,5 +85,5 @@ font-face($font-family, $font-path)
         if 'eot' in $usable-types
             src: url($font-files['eot'])
         src: unquote($str)
-        font-weight: normal
-        font-style: normal
+        font-weight: $font-weight
+        font-style: $font-style
