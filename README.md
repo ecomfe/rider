@@ -28,3 +28,7 @@ rider [![NPM version](https://img.shields.io/npm/v/rider.svg?style=flat-square)]
  * [代码风格](./doc/code-style.md)
  * [常见问题](./doc/faq.md)
  * [DEMO与单元测试](./doc/demo-and-ut.md)
+
+## License
+
+MIT &copy; [Baidu Inc.](./LICENSE)
