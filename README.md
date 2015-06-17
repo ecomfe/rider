@@ -1,5 +1,7 @@
-rider [![NPM version](https://img.shields.io/npm/v/rider.svg?style=flat-square)](https://npmjs.org/package/rider) [![Build Status](https://img.shields.io/travis/ecomfe/rider.svg?style=flat-square)](https://travis-ci.org/ecomfe/rider) [![License](https://img.shields.io/npm/l/rider.svg?style=flat-square)](./LICENSE) [![EFE Mobile Team](https://img.shields.io/badge/EFE-Mobile_Team-blue.svg?style=flat-square)](http://efe.baidu.com)
+rider
 ===
+
+[![NPM version](https://img.shields.io/npm/v/rider.svg?style=flat-square)](https://npmjs.org/package/rider) [![Build Status](https://img.shields.io/travis/ecomfe/rider.svg?style=flat-square)](https://travis-ci.org/ecomfe/rider) [![License](https://img.shields.io/npm/l/rider.svg?style=flat-square)](./LICENSE) [![EFE Mobile Team](https://img.shields.io/badge/EFE-Mobile_Team-blue.svg?style=flat-square)](http://efe.baidu.com)
 
 `rider` 是基于 [Stylus](http://stylus-lang.com) 与后处理器、无侵入风格的 CSS 样式工具库。它提供了以下功能：
 
