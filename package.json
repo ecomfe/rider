@@ -1,7 +1,7 @@
 {
     "name": "rider",
-    "version": "2.0.0-alpha.2",
-    "description": "Rider is a CSS library to focus on Mobile Web, build on top of Stylus.",
+    "version": "2.0.0",
+    "description": "Rider 是一个基于 Stylus 与后处理器、无侵入风格的 CSS 样式工具库",
     "maintainers": [
         {
             "name": "Firede",
