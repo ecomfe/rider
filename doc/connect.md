@@ -54,3 +54,9 @@ initialize()
 
 // etc...
 ```
+
+## 后处理器
+
+`rider` 是一个面向标准 CSS 输出的样式库，需要与 `Autoprefixer` 等后处理器配合使用。
+
+请参考 [`autoprefixer-core`](https://github.com/postcss/autoprefixer-core)、[css-mqpacker](https://github.com/hail2u/node-css-mqpacker) 的文档对后处理器进行配置。
