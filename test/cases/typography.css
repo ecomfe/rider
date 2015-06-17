@@ -30,7 +30,7 @@
 }
 @font-face {
   font-family: 'rider-icon';
-  src: url("../../demo/font/rider-icon.woff") format('woff'), url("../../demo/font/rider-icon.ttf") format('truetype');
+  src: url("font/rider-icon.woff") format('woff'), url("font/rider-icon.ttf") format('truetype');
   font-weight: 700;
   font-style: normal;
 }
