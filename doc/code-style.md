@@ -22,7 +22,7 @@ Mixin 字母全小写，多个单词用 `-` 连接，如：
     relative
     border-width
 
-*说明：Mixin 的命名规则，是为了与 CSS 风格保持一致，以便对 CSS 进行增强。*
+Mixin 的命名规则，是为了与 CSS 风格保持一致，以便对 CSS 进行增强。
 
 ## 整体风格
 
@@ -33,14 +33,16 @@ Mixin 字母全小写，多个单词用 `-` 连接，如：
 initialize()
 
 .box
-    // 在给属性赋值、给 Mixin 传参数时，**用** `:`（冒号）分隔
-    // 语句的结尾 **不加** `;`（分号）
+    // 采用 4 空格缩进
+    // 在给属性赋值、给 Mixin 传参数时，用 `:`（冒号）分隔
+    // 语句的结尾不加 `;`（分号）
     display: block
     size: 80px 60px
     box-shadow: 2px 2px 5px #999
+
     // 使用 Function 时，加括号传递参数
     font-size: rem(14)
 
-// 当 Mixin 应用于 CSS root 时，加括号执行
+// 当 Mixin 应用于 CSS 根节点时，加括号执行
 font-face('rider-icon', 'font/rider-icon')
 ```

@@ -1,0 +1,15 @@
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  .retina-1 {
+    foo: bar;
+  }
+}
+@media (min-resolution: 1.5dppx), (min-resolution: 144dpi) {
+  .retina-2 {
+    foo: baz;
+  }
+}
+@media (min-resolution: 1.5dppx) and (min-width: 601px) and (max-width: 800px), (min-resolution: 144dpi) and (min-width: 601px) and (max-width: 800px) {
+  .retina-with-breakpoint {
+    foo: bar;
+  }
+}

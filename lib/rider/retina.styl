@@ -1,0 +1,10 @@
+// Retina 支持
+//
+// @author  firede(firede@firede.us)
+
+// 限定 retina 模式的 block mixin
+// 不区分 dppx 具体倍数时，取 1.5dppx 作为一般意义上的 retina 设备
+retina($dppx = 1.5)
+    $mq-string = '(min-resolution: %sdppx), (min-resolution: %sdpi)' % ($dppx ($dppx * 96))
+    @media $mq-string
+        {block}

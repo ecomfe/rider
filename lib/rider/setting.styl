@@ -1,31 +1,43 @@
-// setting
+// 配置
 //
 // @author  firede(firede@firede.us)
-// @desc    default settings, you can overriding it by yourself.
+// @desc    默认配置，如需修改，建议在调用之前覆盖
+//          如修改默认字号，可设置：$-base-font-size = 14px
 
 
-// off stylus compatibility settings (ex: keyframes), autoprefixer do it.
+// 关闭 Stylus 修复前缀的兼容性功能，此任务交给 Autoprefixer
 vendors = official
 
-// the unit using `px` value(100% == 16px)
+// 基础字体大小
+// 默认单位为 px，默认值 16px 即为 100%
 $-base-font-size ?= 16px
 
+// 基础字体族群
 // @see http://iosfonts.com
-$-base-font-family ?= 'Helvetica Neue', sans-serif
+$-base-font-family ?= 'Helvetica Neue', Arial, sans-serif
+$-code-font-family ?= Menlo, Consolas, monospace
 
-// usually use `true` in hybrid app
-$-prevent-user-select ?= false
-
-// prevent iOS text size adjust after orientation change
+// 阻止 iOS 在翻转屏幕后调整字体大小
 $-prevent-text-size-adjust ?= true
 
-// prevent tap highlight color
+// 消除 tap highlight 颜色
 $-prevent-tap-highlight ?= true
 
-// default image dppx (dots per px unit)
-$-image-dppx ?= 2
+// 图片的retina版本探测范围
+// 顺序按从小到大排列
+$-image-dppx-range ?= (2 3)
 
-// breakpoint slice
-// default value: 0 400px 600px 800px 1050px
-// slice number: <- 1 |  2  |  3  |  4  |  5 ->
+// 图片dppx分隔符
+$-image-dppx-separator ?= '@'
+
+// 图片质量优先模式
+// 启用时将为低 0.5dppx 以内的设备，使用质量更高的图片
+$-image-dppx-quality-first ?= false
+
+// breakpoint 的切片分段
+// 默认值: 0 400px 600px 800px 1050px
+// 片段: <- 1 |  2  |  3  |  4  |  5 ->
 $-breakpoint-slice ?= 0 400px 600px 800px 1050px
+
+// 单位转换精度，小数点后保留的位数
+$-unit-precision ?= 5

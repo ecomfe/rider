@@ -1,101 +1,153 @@
-.bg-external-link-1 {
-  background: url("http://www.baidu.com/img/bdlogo.gif") no-repeat;
-}
-.bg-external-link-2 {
-  background: url("http://www.baidu.com/img/bdlogo.gif") no-repeat;
-  background-size: 100px auto;
-}
-.bg-external-link-3 {
-  background: url("http://www.baidu.com/img/bdlogo.gif") no-repeat;
-  background-size: 100px 50px;
-}
-.bg-local-image-1 {
-  background: url("img/logo.png") no-repeat;
-  background-size: 75px 44px;
-}
-.bg-local-image-2 {
-  background: url("img/logo.png") no-repeat;
-  background-size: 100px auto;
-}
-.bg-local-image-3 {
-  background: url("img/logo.png") no-repeat;
-  background-size: 100px 50px;
-}
-.bg-local-image-4 {
-  background: url("img/logo.png") no-repeat;
+.bg-1 {
+  background-image: url("img/logo.png");
   background-size: 150px 88px;
+  background-repeat: no-repeat;
 }
-.bg-local-image-5 {
-  background: url("img/logo.png") no-repeat;
-  background-size: contain;
+.bg-2 {
+  background-image: url("img/rider.png");
+  background-size: 136px 136px;
+  background-repeat: no-repeat;
 }
-.bg-local-image-not-exist {
-  background: url("img/not-exist.png") no-repeat;
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  .bg-2 {
+    background-image: url("img/rider@2x.png");
+  }
 }
-.ir-external-link-1 {
-  background: url("http://www.baidu.com/img/bdlogo.gif") no-repeat;
+.bg-3 {
+  background-image: url("img/rider.png");
+  background-size: 20px 30px;
+  background-repeat: no-repeat;
+}
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  .bg-3 {
+    background-image: url("img/rider@2x.png");
+  }
+}
+.bg-4 {
+  background-image: url("img/rider.png");
+  background-size: 20px 136px;
+  background-repeat: no-repeat;
+}
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  .bg-4 {
+    background-image: url("img/rider@2x.png");
+  }
+}
+.ir-1 {
   color: transparent;
   font: 0/0 a;
   text-shadow: none;
+  background-image: url("img/rider.png");
+  background-size: 136px 136px;
+  background-repeat: no-repeat;
 }
-.ir-local-image-1 {
-  background: url("img/logo.png") no-repeat;
-  background-size: 75px 44px;
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  .ir-1 {
+    background-image: url("img/rider@2x.png");
+  }
+}
+.ir-2 {
   color: transparent;
   font: 0/0 a;
   text-shadow: none;
-}
-.ir-local-image-2 {
-  background: url("img/logo.png") no-repeat;
-  background-size: 75px 44px;
-  background-position: -10px;
-  color: transparent;
-  font: 0/0 a;
-  text-shadow: none;
-}
-.ir-local-image-3 {
-  background: url("img/logo.png") no-repeat;
-  background-size: 75px 44px;
   background-position: -10px -20px;
+  background-image: url("img/rider.png");
+  background-size: 136px 136px;
+  background-repeat: no-repeat;
+}
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  .ir-2 {
+    background-image: url("img/rider@2x.png");
+  }
+}
+.ir-3 {
   color: transparent;
   font: 0/0 a;
   text-shadow: none;
+  background-position-y: -20px;
+  background-image: url("img/rider.png");
+  background-size: 136px 136px;
+  background-repeat: no-repeat;
 }
-.ir-local-image-4 {
-  background: url("img/logo.png") no-repeat;
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  .ir-3 {
+    background-image: url("img/rider@2x.png");
+  }
+}
+.ir-4 {
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+  background-position-x: -30px;
+  background-image: url("img/rider.png");
+  background-size: 136px 136px;
+  background-repeat: no-repeat;
+}
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  .ir-4 {
+    background-image: url("img/rider@2x.png");
+  }
+}
+.ir-5 {
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+  background-position: 0 -30px;
+  background-image: url("img/rider.png");
+  background-size: 100px 200px;
+  background-repeat: no-repeat;
+}
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  .ir-5 {
+    background-image: url("img/rider@2x.png");
+  }
+}
+.ir-6 {
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+  background-position: 0;
+  background-image: url("img/rider.png");
+  background-size: 100px 200px;
+  background-repeat: no-repeat;
+}
+@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+  .ir-6 {
+    background-image: url("img/rider@2x.png");
+  }
+}
+.bg2x-1 {
+  background-image: url("img/logo.png");
   background-size: 75px 44px;
-  background-position: center;
-  color: transparent;
-  font: 0/0 a;
-  text-shadow: none;
+  background-repeat: no-repeat;
 }
-.ir-local-image-5 {
-  background: url("img/logo.png") no-repeat;
-  background-size: 100px auto;
-  background-position: -10px -20px;
-  color: transparent;
-  font: 0/0 a;
-  text-shadow: none;
+.bg2x-2 {
+  background-image: url("img/logo.png");
+  background-size: 10px 44px;
+  background-repeat: no-repeat;
 }
-.ir-local-image-6 {
-  background: url("img/logo.png") no-repeat;
-  background-size: 100px 50px;
-  background-position: -10px -20px;
-  color: transparent;
-  font: 0/0 a;
-  text-shadow: none;
+.bg2x-3 {
+  background-image: url("img/logo.png");
+  background-size: 10px 5px;
+  background-repeat: no-repeat;
 }
-.ir-local-image-7 {
-  background: url("img/logo.png") no-repeat;
-  background-size: 150px 88px;
-  background-position: -10px -20px;
-  color: transparent;
-  font: 0/0 a;
-  text-shadow: none;
+.bg2x-4 {
+  background-image: url("img/rider@2x.png");
+  background-size: 136px 136px;
+  background-repeat: no-repeat;
 }
-.ir-local-image-not-exist {
-  background: url("img/not-exist.png") no-repeat;
-  color: transparent;
-  font: 0/0 a;
-  text-shadow: none;
+.bg3x-1 {
+  background-image: url("img/logo.png");
+  background-size: 50px 29px;
+  background-repeat: no-repeat;
+}
+.bg-dppx-1 {
+  background-image: url("img/logo.png");
+  background-size: 75px 44px;
+  background-repeat: no-repeat;
+}
+.bg-dppx-2 {
+  background-image: url("img/logo.png");
+  background-size: 37px 22px;
+  background-repeat: no-repeat;
 }

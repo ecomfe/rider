@@ -5,125 +5,58 @@
 
 @require 'setting'
 
-breakpoint()
-    // exception handling
-    if length(arguments) < 1
-        error('breakpoint requires arguments.')
-        return
+breakpoint($min-value, $max-value)
+    // 异常处理
     unless mixin in ('block' 'root')
-        error('breakpoint must be the block/root when you use it.')
+        error('+breakpoint() 需要以 block mixin 的方式使用')
 
+    // media query 数组
     $mq-array = ()
-    $retina-required = false
 
-    // dirty patch
-    if length(arguments) == 2 && typeof(arguments[0]) == 'unit' && typeof(arguments[1]) == 'unit'
-        $args = (null arguments)
-    else
-        $args = arguments
+    if unit($min-value) == ''
+        $min-value = ($-breakpoint-slice[$min-value - 1] + 1 || 0) unless $min-value == 0
 
-    // loops
-    for $arg in $args
-        $arg-type = typeof($arg)
-
-        if $arg-type == 'unit' && length($arg) == 2
-
-            $min-value = $arg[0]
-            $max-value = $arg[1]
-
-            if unit($min-value) == ''
-                $min-value = ($-breakpoint-slice[$min-value - 1] + 1 || 0) unless $min-value == 0
-
-            if unit($max-value) == ''
-                if $max-value < length($-breakpoint-slice)
-                    $max-value = $-breakpoint-slice[$max-value]
-                else
-                    // 0 means larger than largest slice
-                    $max-value = 0
-
-            if $min-value > 1
-                push($mq-array, '(min-width: %s)' % $min-value)
-
-            if $max-value > 1
-                push($mq-array, '(max-width: %s)' % $max-value)
-
-        else if $arg-type == 'string' && $arg in ('portrait' 'landscape')
-            // orientation
-            push($mq-array, '(orientation: %s)' % unquote($arg))
-
-        else if $arg-type == 'string' && $arg in ('all' 'screen' 'print' 'tv' 'braille' 'embossed' 'handheld' 'projection' 'speech' 'tty')
-            // @see http://goo.gl/a3twta
-            unshift($mq-array, $arg)
-
-        else if $arg == 'retina'
-            // retina
-            $retina-required = true
-
+    if unit($max-value) == ''
+        if $max-value < length($-breakpoint-slice)
+            $max-value = $-breakpoint-slice[$max-value]
         else
-            warn('the argument "' + $arg + '" is unknown, please remove it.') unless $arg == null
+            // 最大值为 0 时，代表大于最大的切片的值
+            $max-value = 0
+
+    if $min-value > 1
+        push($mq-array, '(min-width: %s)' % $min-value)
+
+    if $max-value > 1
+        push($mq-array, '(max-width: %s)' % $max-value)
 
     // join queries
     $mq-string = join(' and ', $mq-array)
 
-    // hack it until autoprefixer supported
-    // "," higher priority than "and"
-    if $retina-required == true
-        // @see http://goo.gl/eHTUo6
-        // @see http://bjango.com/articles/min-device-pixel-ratio/
-        $mq-retina-array = ('(-webkit-min-device-pixel-ratio: 1.3)' '(min-resolution: 125dpi)')
-
-        if $mq-string
-            $mq-string = '%s and %s, %s and %s' % (unquote($mq-string) unquote($mq-retina-array[0]) unquote($mq-string) unquote($mq-retina-array[1]))
-        else
-            $mq-string = join(', ', $mq-retina-array)
-
     unless $mq-string
-        error('breakpoint is invalid, please check the arguments.')
+        error('breakpoint() 无法生成出合法的 media query，请检查参数是否正确')
 
     @media $mq-string
         {block}
 
 
 below($value)
-    $values = (0 $value)
-    if mixin in ('block' 'root')
-        +breakpoint($values)
-            {block}
-    else
-        return $values
+    +breakpoint(0, $value)
+        {block}
 
 
 above($value)
-    $values = $value, length($-breakpoint-slice)
-    if mixin in ('block' 'root')
-        +breakpoint($values)
-            {block}
-    else
-        return $values
+    +breakpoint($value, length($-breakpoint-slice))
+        {block}
 
 
 at($value)
     if unit($value) != ''
-        error('$value must be a breakpoint slice.')
-    $values = ($value $value)
-    if mixin in ('block' 'root')
-        +breakpoint($values)
-            {block}
-    else
-        return $values
+        error('$value 必须为 breakpoint 的切片')
+    +breakpoint($value, $value)
+        {block}
 
 
 between($from-value, $to-value)
-    $values = ($from-value $to-value)
-    if mixin in ('block' 'root')
-        +breakpoint($values)
-            {block}
-    else
-        return $values
-
-
-retina()
-    if mixin in ('block' 'root')
-        +breakpoint('retina')
-            {block}
+    +breakpoint($from-value, $to-value)
+        {block}
 

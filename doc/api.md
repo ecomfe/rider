@@ -9,11 +9,12 @@ API
 ---|---|---
 `$-base-font-size` | `16px` | 用于设置默认文字大小、常用单位的转换
 `$-base-font-family` | `'Helvetica Neue', sans-serif` | 默认字体
-`$-prevent-user-select` | `false` | 屏蔽用户选择文本的能力，通常用在 Hybrid App 场景
+`$-code-font-family` | `Menlo, Consolas, monospace` | 代码的默认字体
 `$-prevent-text-size-adjust` | `true` | 屏蔽屏幕翻转时，浏览器缩放字体的行为
 `$-prevent-tap-highlight` | `true` | 屏蔽 `a` 标签的点击高亮效果
 `$-image-dppx` | `2` | 图片每像素的点数，用于支持 retina 设备
 `$-breakpoint-slice` | `0 400px 600px 800px 1050px` | 响应式Web设计屏幕尺寸的划分
+`$-unit-precision` | `5` | 单位精度，转换后保留的小数位数
 
 
 ## 样式初始化
@@ -409,7 +410,7 @@ css:
 }
 ```
 
-### font-face: font-family, font-path, version-suffix
+### font-face: font-family, font-path
 
 快速引入字体。
 
@@ -417,20 +418,19 @@ css:
 
 + `font-family` 字体名
 + `font-path` 字体路径，是字体去掉后缀名之后的部分
-+ `version-suffix` `(可选)` 版本后缀，用来更新字体版本
 
 **使用方法**
 
 stylus:
 
 ```haml
-font-face('rider-icon', 'font/rider-icon', '88')
+font-face('rider-icon', 'font/rider-icon')
 ```
 
 ```css
 @font-face {
     font-family: 'rider-icon';
-    src: url("font/rider-icon.woff?88") format('woff'), url("font/rider-icon.ttf?88") format('truetype');
+    src: url("font/rider-icon.woff") format('woff'), url("font/rider-icon.ttf?88") format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -554,13 +554,16 @@ css:
 
     bounce bounceIn bounceInDown bounceInLeft bounceInRight bounceInUp
     bounceOut bounceOutDown bounceOutLeft bounceOutRight bounceOutUp
-    fadeIn fadeInDown fadeInLeft fadeInRight fadeInUp fadeOut fadeOutDown
-    fadeOutLeft fadeOutRight fadeOutUp flash flip flipInX flipInY
-    flipOutX flipOutY hinge lightSpeedIn lightSpeedOut pulse rollIn rollOut
-    rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight
-    rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft
-    rotateOutUpRight rubberBand shake slideInDown slideInLeft slideInRight
-    slideOutLeft slideOutRight slideOutUp swing tada wobble
+    fadeIn fadeInDown fadeInDownBig fadeInLeft fadeInLeftBig fadeInRight
+    fadeInRightBig fadeInUp fadeInUpBig fadeOut fadeOutDown fadeOutDownBig
+    fadeOutLeft fadeOutLeftBig fadeOutRight fadeOutRightBig fadeOutUp fadeOutUpBig
+    flash flip flipInX flipInY flipOutX flipOutY hinge lightSpeedIn lightSpeedOut
+    pulse rollIn rollOut rotateIn rotateInDownLeft rotateInDownRight
+    rotateInUpLeft rotateInUpRight rotateOut rotateOutDownLeft rotateOutDownRight
+    rotateOutUpLeft rotateOutUpRight rubberBand shake slideInDown slideInLeft
+    slideInRight slideOutLeft slideOutRight slideOutUp swing tada wobble
+    zoomIn zoomInDown zoomInLeft zoomInRight zoomInUp
+    zoomOut zoomOutDown zoomOutLeft zoomOutRight zoomOutUp
 
 动画效果可以参考 [Animate.css](http://daneden.github.io/animate.css/)
 

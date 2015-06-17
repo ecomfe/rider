@@ -1,10 +1,10 @@
-// shape
-// 
-// @author  firede(firede@firede.us)
+// 形状
+//
+// @author firede(firede@firede.us)
 
 
-// set width and height quickly
-// default unit is `px`
+// 快速设置宽度与高度
+// 默认单位为 `px`
 size($values...)
     if length($values) == 1
         $values-unit = unit($values) == '' ? 'px' : unit($values)
@@ -19,7 +19,7 @@ size($values...)
         height: unit($values[1], $height-unit)
 
 
-// triangle
+// 三角形
 triangle($direction = top, $size = 10px, $color = #333)
     size: 0
 
@@ -39,4 +39,19 @@ triangle($direction = top, $size = 10px, $color = #333)
         border-top: $size solid transparent
         border-bottom: $size solid transparent
         border-left: $size solid $color
+
+
+// 圆形
+circle($values...)
+    if length($values) == 1
+        $values-unit = unit($values) == '' ? 'px' : unit($values)
+
+        border-radius: unit($values, $values-unit)
+        size: $values
+    else
+        $horizontal-unit = unit($values[0]) == '' ? 'px' : unit($values[0])
+        $vertical-unit = unit($values[1]) == '' ? 'px' : unit($values[1])
+
+        border-radius: unit($values[0], $horizontal-unit) \/ unit($values[1], $vertical-unit)
+        size: $values[0] $values[1]
 

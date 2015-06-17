@@ -1,42 +1,86 @@
-// image
-// 
+// 图片
+//
 // @author  firede(firede@firede.us)
-// @desc    image helpers
 
 
 @require 'setting'
+@require 'retina'
 @require 'typography'
 
 
-// set background image
-bg($path, $width = auto, $height = auto, $dppx = $-image-dppx)
-    warn('$path should be a string.') if typeof($path) != 'string'
-    background: url($path) no-repeat
+// 设置背景图片
+// 自动查找并设置为 retina 设备准备的高清图片
+bg($src, $width = null, $height = null)
 
-    if $width in (cover contain) and $height == auto
-        $height = null
-    else if $width == auto && $height == auto
-        $img-size = image-size($path, 0)
-        if $img-size[0] != 0
-            $width = ($img-size[0] / $dppx)
-            $height = ($img-size[1] / $dppx)
-        else
-            $width = null
-            $height = null
-            warn('$width and $height get failed, the values has been set to `auto`.')
+    if not file-exists($src)
+        error('$src 必须为本地已存在的图片路径：' + $src)
 
-    if $width != null || $height != null
-        background-size: $width $height
+    // 获取图片尺寸
+    $img-size = image-size($src)
+    $width = $img-size[0] if $width == null
+    $height = $img-size[1] if $height == null
+
+    background-image: url($src)
+    background-size: $width $height
+    background-repeat: no-repeat
+
+    for $dppx, $index in $-image-dppx-range
+        // 忽略 dppx 为 1 的情况
+        if $dppx != 1
+            $computed-src = get-retina-src($src, $dppx, $-image-dppx-separator)
+            if file-exists($computed-src)
+                // 质量优先模式
+                if $-image-dppx-quality-first && $dppx > 1.5
+                    $computed-dppx = $dppx - 0.5
+                else
+                    $computed-dppx = $dppx
+
+                +retina($computed-dppx)
+                    background-image: url($computed-src)
 
 
-// image replace
-// hide text and set background image
-ir($path, $x = 0, $y = 0, $width = auto, $height = auto, $dppx = $-image-dppx)
-    bg($path, $width, $height, $dppx)
-
-    if $x != 0 && $y == 0
-        $y = null
-    if $x != 0
-        background-position: $x $y
-
+// 图片替换
+// 隐藏文字并设置背景图片，可指定背景图片坐标
+ir($src, $x = null, $y = null, $width = null, $height = null)
     hide-text()
+
+    background-position-x: $x if $x != null && $y == null
+    background-position-y: $y if $x == null && $y != null
+    if $x != null && $y != null
+        if $x == $y
+            background-position: $x
+        else
+            background-position: $x $y
+
+    bg($src, $width, $height)
+
+
+// 使用若干 dppx 倍数的图片
+// 若换算后的图片尺寸不为整数，则舍弃小数部分
+bg-dppx($dppx, $src, $width = null, $height = null)
+
+    if unit($dppx) != ''
+        error('$dppx 的值必须是一个代表倍数的数字')
+
+    if not file-exists($src)
+        error('$src 必须为本地已存在的图片路径：' + $src)
+
+    // 获取图片尺寸
+    $img-size = image-size($src)
+    $width = floor($img-size[0] / $dppx) if $width == null
+    $height = floor($img-size[1] / $dppx) if $height == null
+
+    background-image: url($src)
+    background-size: $width $height
+    background-repeat: no-repeat
+
+
+// 使用 2dppx 的图片作为背景
+bg2x($src, $width = null, $height = null)
+    bg-dppx(2, $src, $width, $height)
+
+
+// 使用 3dppx 的图片作为背景
+bg3x($src, $width = null, $height = null)
+    bg-dppx(3, $src, $width, $height)
+

@@ -1,33 +1,36 @@
-// unit
-// 
+// 单位
+//
 // @author  firede(firede@firede.us)
-// @desc    unit conversion functions
+// @desc    单位转换函数
 
 
 @require 'setting'
 
-// convert to rem unit
-// default unit is `px`
+// 转换至 rem 单位
+// $value 接收 `px` 单位的值，`px` 可省略
 rem($value)
     if unit($value) == 'px' || unit($value) == ''
-        $value = round($value / $-base-font-size, 3)
+        $value = round($value / $-base-font-size, $-unit-precision)
 
     unit($value, 'rem')
 
 
-// convert to em unit
+// 转换至 em 单位
+// $value 接收 `px`, `rem` 单位的值，省略单位默认为 `px`
+// $upper-value 作为相对单位，需指定上级元素字体大小
 em($value, $upper-value = $-base-font-size)
     if unit($value) == 'px' || unit($value) == ''
-        $value = round($value / px($upper-value), 3)
+        $value = round($value / px($upper-value), $-unit-precision)
     else if unit($value) == 'rem'
-        $value = round(px($value) / px($upper-value), 3)
+        $value = round(px($value) / px($upper-value), $-unit-precision)
 
     unit($value, 'em')
 
 
-// convert to px unit
+// 转换至 px 单位
+// $value 接收 `rem` 单位的值
 px($value)
     if unit($value) == 'rem'
-        $value = round($value * $-base-font-size, 3)
+        $value = round($value * $-base-font-size, $-unit-precision)
 
     unit($value, 'px')
