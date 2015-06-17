@@ -15,7 +15,6 @@
  * 增加 Function：`bg2x()`, `bg3x()`, `bg-dppx()` [#23](https://github.com/ecomfe/rider/issues/23)
  * 增加 Function：`file-exists()`, `is-url()`, `get-retina-src` [#15](https://github.com/ecomfe/rider/issues/15)
  * 增加 Mixin：`normalize()` 作为布局初始化的补充 [#8](https://github.com/ecomfe/rider/issues/8)
- * 增加 Mixin：`physical-border-width()` 解决 retina 设备 1px 边框问题 [#13](https://github.com/ecomfe/rider/issues/13)
  * 增加 Mixin：`circle()` 生成圆形或椭圆
  * 增加 Block Mixin：`+retina()` [#20](https://github.com/ecomfe/rider/issues/20)
  * 改进 Function：`rem()`, `em()`, `px()` 单位转换定义截取小数点位数 [#4](https://github.com/ecomfe/rider/issues/4)
